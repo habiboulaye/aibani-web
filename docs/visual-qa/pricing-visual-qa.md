@@ -31,7 +31,7 @@ Screenshots and annotations
 
 Notes for reviewers:
 
-- Link to PR: (add PR URL here after creating the PR)
+- Link to PR: https://github.com/habiboulaye/aibani-web/pull/8
 - Reviewer: @habiboulaye (design) — please attach annotated screenshots and short notes.
 
 Checklist before merge:

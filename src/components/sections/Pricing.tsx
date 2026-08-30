@@ -7,8 +7,10 @@ export default function Pricing() {
   return (
     <section className="py-12 bg-slate-50">
       <div className="max-w-4xl mx-auto px-4">
-        <h3 className="text-2xl font-semibold">Nos offres</h3>
-        <p className="mt-2 text-slate-600">{`Prix indicatifs — voir le détail selon configuration.`}</p>
+        <h3 className="text-2xl font-semibold">{pricing.title || 'Nos offres'}</h3>
+        {pricing.subtitle && (
+          <p className="mt-2 text-slate-600">{pricing.subtitle}</p>
+        )}
 
         <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {tiers.map((t: any) => (

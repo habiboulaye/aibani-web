@@ -1,6 +1,8 @@
 {
   "$schema": "./schema/pricing.schema.json",
   "_note": "Prix ancrés sur des repères de marché réels (Phénix, KiboERP, Clinicaa, Doctolib — voir docs/decisions/0003-pricing-benchmarked-tiers.md). Restent des hypothèses commerciales à confirmer sur le terrain, pas des tarifs figés définitivement. Modifier CE FICHIER pour changer un prix — jamais un composant.",
+  "title": "Nos offres",
+  "subtitle": "Prix indicatifs — voir le détail selon configuration.",
   "currency": "FCFA",
   "tiers": [
     {
@@ -61,7 +63,7 @@
       "name": "AiBani Groupe",
       "price": null,
       "priceLabel": "Sur devis",
-      "priceNote": "Repère interne (non public) : ~400 000-500 000 FCFA/mois selon configuration — cf. ADR-0003",
+      "priceNote": "Sur devis — nous contacter pour une estimation selon configuration.",
       "tagline": "Pour les réseaux, grands établissements et organisations de santé",
       "ctaLabel": "Parler à un expert AiBani",
       "ctaStyle": "secondary",
