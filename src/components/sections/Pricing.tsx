@@ -1,17 +1,18 @@
 import React from 'react'
 import pricing from '../../../content/pricing.json'
 import type { PricingContent, PricingTier } from '../../lib/types/content-types'
+import { localizeHref } from '../../lib/i18n/localizeHref'
 
 const { title, subtitle, patientNote, tiers, features } = pricing as PricingContent
 
 // No self-serve signup/trial flow exists yet (pre-Phase-5): every tier CTA routes
 // to the one real conversion point spec'd for this phase (docs/specs/04-content-pages.md),
 // except Groupe which is explicitly a sales conversation.
-function ctaHref(tier: PricingTier) {
-  return tier.id === 'groupe' ? '/contact' : '/demo'
+function ctaHref(locale: string, tier: PricingTier) {
+  return localizeHref(locale, tier.id === 'groupe' ? '/contact' : '/demo')
 }
 
-export default function Pricing() {
+export default function Pricing({ locale }: { locale: string }) {
   return (
     <section id="tarifs" className="py-12 bg-slate-50">
       <div className="max-w-4xl mx-auto px-4">
@@ -53,7 +54,7 @@ export default function Pricing() {
                 </div>
                 <div className="mt-4">
                   <a
-                    href={ctaHref(t)}
+                    href={ctaHref(locale, t)}
                     aria-label={`${t.ctaLabel} — ${t.name}, ${t.priceLabel}`}
                     className={
                       t.ctaStyle === 'primary'
