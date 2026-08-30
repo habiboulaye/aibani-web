@@ -2,9 +2,10 @@ name: CI
 
 on:
   push:
-    branches: [ main, 'phase1/**' ]
-  pull_request:
-    branches: [ main ]
+    branches: [ main, 'phase*/**' ]
+  # No branches filter: stacked PRs target frozen checkpoint branches
+  # (e.g. phase1/pricing-checkpoint), not always main.
+  pull_request: {}
   workflow_dispatch: {}
 
 jobs:
