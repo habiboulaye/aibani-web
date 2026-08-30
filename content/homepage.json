@@ -8,7 +8,7 @@
     "title": "Fonctionnalités clés",
     "items": [
       { "id": "f1", "title": "Agenda & RDV", "description": "Gérez facilement les rendez-vous et disponibilités." },
-      { "id": "f2", "title": "Dossiers patients", "description": "Accédez aux informations cliniques centralisées." }
+      { "id": "f2", "title": "Dossiers patients", "description": "Accédez aux informations cliniques centralisées.", "availabilityNote": "selon l'offre (à partir de Cabinet)" }
     ]
   },
   "finalCta": {

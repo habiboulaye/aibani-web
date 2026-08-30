@@ -35,33 +35,48 @@
     ]
   },
   "footer": {
-    "solutions": [
-      { "label": "Pour les patients", "href": "/patients" },
-      { "label": "Pour les cabinets", "href": "/solutions/cabinet" },
-      { "label": "Pour les cliniques", "href": "/solutions/clinique" },
-      { "label": "Pour les laboratoires", "href": "/solutions/laboratoire" },
-      { "label": "Pour les pharmacies", "href": "/solutions/pharmacie" },
-      { "label": "Pour les établissements de santé", "href": "/solutions/etablissement" }
-    ],
-    "product": [
-      { "label": "Fonctionnalités", "href": "/fonctionnalites" },
-      { "label": "Tarifs", "href": "/tarifs" },
-      { "label": "Démonstration", "href": "/demo" }
-    ],
-    "company": [
-      { "label": "À propos", "href": "/a-propos" },
-      { "label": "Contact", "href": "/contact" }
-    ],
-    "trust": [
-      { "label": "Sécurité", "href": "/securite" },
-      { "label": "Mentions légales", "href": "/mentions-legales" },
-      { "label": "Confidentialité", "href": "/confidentialite" },
-      { "label": "Conditions d'utilisation", "href": "/cgu" }
-    ],
-    "support": [
-      { "label": "Centre d'aide", "href": "/ressources/aide" },
-      { "label": "FAQ", "href": "/ressources/faq" },
-      { "label": "Contact", "href": "/contact" }
-    ]
+    "solutions": {
+      "title": "Solutions",
+      "links": [
+        { "label": "Pour les patients", "href": "/patients" },
+        { "label": "Pour les cabinets", "href": "/solutions/cabinet" },
+        { "label": "Pour les cliniques", "href": "/solutions/clinique" },
+        { "label": "Pour les laboratoires", "href": "/solutions/laboratoire" },
+        { "label": "Pour les pharmacies", "href": "/solutions/pharmacie" },
+        { "label": "Pour les établissements de santé", "href": "/solutions/etablissement" }
+      ]
+    },
+    "product": {
+      "title": "Produit",
+      "links": [
+        { "label": "Fonctionnalités", "href": "/fonctionnalites" },
+        { "label": "Tarifs", "href": "/tarifs" },
+        { "label": "Démonstration", "href": "/demo" }
+      ]
+    },
+    "company": {
+      "title": "Entreprise",
+      "links": [
+        { "label": "À propos", "href": "/a-propos" },
+        { "label": "Contact", "href": "/contact" }
+      ]
+    },
+    "trust": {
+      "title": "Confiance",
+      "links": [
+        { "label": "Sécurité", "href": "/securite" },
+        { "label": "Mentions légales", "href": "/mentions-legales" },
+        { "label": "Confidentialité", "href": "/confidentialite" },
+        { "label": "Conditions d'utilisation", "href": "/cgu" }
+      ]
+    },
+    "support": {
+      "title": "Support",
+      "links": [
+        { "label": "Centre d'aide", "href": "/ressources/aide" },
+        { "label": "FAQ", "href": "/ressources/faq" },
+        { "label": "Contact", "href": "/contact" }
+      ]
+    }
   }
 }

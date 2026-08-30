@@ -1,5 +1,6 @@
 import React from 'react'
 import Hero from '../components/sections/Hero'
+import SocialProof from '../components/sections/SocialProof'
 import Features from '../components/sections/Features'
 import Testimonials from '../components/sections/Testimonials'
 import Pricing from '../components/sections/Pricing'
@@ -9,6 +10,7 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <SocialProof />
       <Features />
       <Testimonials />
       <Pricing />

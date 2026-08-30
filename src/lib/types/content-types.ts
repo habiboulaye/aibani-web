@@ -14,6 +14,11 @@ export type Testimonial = {
   role?: string
 }
 
+export type TestimonialsContent = {
+  title: string
+  testimonials: Testimonial[]
+}
+
 export type PricingFeature = {
   label: string
   availabilityNote?: string
@@ -95,6 +100,7 @@ export type HomepageFeatureItem = {
   id: string
   title: string
   description: string
+  availabilityNote?: string
 }
 
 export type HomepageContent = {
@@ -128,10 +134,15 @@ export type NavigationContent = {
     phones: ContactPhone[]
   }
   footer: {
-    solutions: NavLink[]
-    product: NavLink[]
-    company: NavLink[]
-    trust: NavLink[]
-    support: NavLink[]
+    solutions: FooterColumn
+    product: FooterColumn
+    company: FooterColumn
+    trust: FooterColumn
+    support: FooterColumn
   }
+}
+
+export type FooterColumn = {
+  title: string
+  links: NavLink[]
 }

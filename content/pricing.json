@@ -13,7 +13,7 @@
       "priceNote": null,
       "audienceBadge": "Pour établissements — acquisition patient gratuite",
       "tagline": "Pour commencer",
-      "ctaLabel": "Commencer l'essai gratuit",
+      "ctaLabel": "Créer mon établissement — gratuit",
       "ctaStyle": "primary",
       "featureIds": [
         "profile",
@@ -37,7 +37,7 @@
       "maxPractitioners": 5,
       "priceAtMaxPractitioners": 65000,
       "tagline": "Pour les cabinets et centres de santé",
-      "ctaLabel": "Essayer gratuitement 30 jours",
+      "ctaLabel": "Essayer gratuitement",
       "ctaStyle": "primary",
       "includesTierId": "connect",
       "featureIds": [

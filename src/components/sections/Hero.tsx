@@ -8,7 +8,7 @@ export default function Hero() {
   return (
     <section className="py-16 bg-gradient-to-b from-white to-slate-50">
       <div className="max-w-5xl mx-auto px-4 text-center">
-        <h2 className="text-4xl font-extrabold">{hero.title}</h2>
+        <h1 className="text-4xl font-extrabold">{hero.title}</h1>
         <p className="mt-4 text-lg text-slate-600">{hero.subtitle}</p>
       </div>
     </section>

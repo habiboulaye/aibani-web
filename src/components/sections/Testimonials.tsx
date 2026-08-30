@@ -1,8 +1,8 @@
 import React from 'react'
 import testimonialsContent from '../../../content/testimonials.json'
-import type { Testimonial } from '../../lib/types/content-types'
+import type { TestimonialsContent } from '../../lib/types/content-types'
 
-const testimonials: Testimonial[] = testimonialsContent.testimonials
+const { title, testimonials } = testimonialsContent as TestimonialsContent
 
 export default function Testimonials() {
   if (testimonials.length === 0) {
@@ -12,7 +12,7 @@ export default function Testimonials() {
   return (
     <section className="py-12 bg-white">
       <div className="max-w-4xl mx-auto px-4">
-        <h3 className="text-2xl font-semibold">Témoignages</h3>
+        <h2 className="text-2xl font-semibold">{title}</h2>
         <div className="mt-6 space-y-4">
           {testimonials.map(t => (
             <blockquote key={t.id} className="p-4 border rounded-md">

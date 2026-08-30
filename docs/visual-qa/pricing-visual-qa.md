@@ -36,7 +36,7 @@ Notes for reviewers:
 
 Checklist before merge:
 
-- [ ] Visual screenshots attached
+- [ ] Visual screenshots attached — **blocked**: `npm run screenshot:pricing` needs Playwright's bundled Chromium, which no longer ships a build for macOS 12 (Monterey). Capture from a newer Mac/Linux machine, or once the Vercel preview URL (ADR-0007) is live, screenshot that directly.
 - [ ] No contrast or spacing regressions
-- [ ] Copy passes marketing critique
-- [ ] Compliance reviewer signs off on any claims or prices
+- [x] Copy passes marketing critique — reviewed 2026-08-30 by the `marketing-critic` subagent; blocking findings (dead CTAs, mislabeled free tier, unrendered feature list, zero social proof) fixed in the same pass. Non-blocking suggestions (Hero/CTA repositioning, tier emphasis, asymmetric audience badges) left for a follow-up content PR.
+- [x] Compliance reviewer signs off on any claims or prices — reviewed 2026-08-30 by the `compliance-reviewer` subagent; the one blocking finding (unqualified tier-gated feature on the homepage) is fixed.
