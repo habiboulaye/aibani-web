@@ -2,6 +2,7 @@ import React from 'react'
 import Hero from '../components/sections/Hero'
 import Features from '../components/sections/Features'
 import Testimonials from '../components/sections/Testimonials'
+import Pricing from '../components/sections/Pricing'
 import CTA from '../components/sections/CTA'
 
 export default function Home() {
@@ -14,6 +15,7 @@ export default function Home() {
         <p className="mt-3 text-slate-600">Prototype de la Phase 1 — continuer l'implémentation des sections.</p>
       </main>
       <Testimonials />
+      <Pricing />
       <CTA />
     </>
   )
