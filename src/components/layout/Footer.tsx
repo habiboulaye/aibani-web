@@ -9,18 +9,18 @@ const columnKeys: (keyof NavigationContent['footer'])[] = ['solutions', 'product
 
 export default function Footer({ locale }: { locale: string }) {
   return (
-    <footer className="w-full border-t bg-white mt-12">
+    <footer className="w-full border-t border-mist-200 bg-white mt-12">
       <div className="max-w-6xl mx-auto px-4 py-10">
         <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
           {columnKeys.map(key => {
             const column = nav.footer[key]
             return (
               <div key={key}>
-                <h4 className="text-sm font-semibold text-slate-900">{column.title}</h4>
+                <h4 className="text-sm font-semibold text-ink-900">{column.title}</h4>
                 <ul className="mt-3 space-y-2">
                   {column.links.map(link => (
                     <li key={link.href}>
-                      <a href={localizeHref(locale, link.href)} className="text-sm text-slate-600 hover:text-slate-900">{link.label}</a>
+                      <a href={localizeHref(locale, link.href)} className="text-sm text-ink-900/70 hover:text-ink-900">{link.label}</a>
                     </li>
                   ))}
                 </ul>
@@ -28,7 +28,7 @@ export default function Footer({ locale }: { locale: string }) {
             )
           })}
         </div>
-        <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm text-slate-600">
+        <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm text-ink-900/70">
           {nav.contact.phones
             .slice()
             .sort((a, b) => Number(b.primary) - Number(a.primary))
@@ -38,7 +38,7 @@ export default function Footer({ locale }: { locale: string }) {
               </a>
             ))}
         </div>
-        <div className="mt-6 pt-6 border-t text-sm text-slate-600">
+        <div className="mt-6 pt-6 border-t border-mist-200 text-sm text-ink-900/70">
           © {new Date().getFullYear()} AiBani — Tous droits réservés
         </div>
       </div>

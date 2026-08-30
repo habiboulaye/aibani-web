@@ -2,6 +2,7 @@ import { test, expect } from '@playwright/test'
 import AxeBuilder from '@axe-core/playwright'
 import pricing from '../../content/pricing.json'
 import stats from '../../content/stats.json'
+import navigation from '../../content/navigation.json'
 
 test.describe('homepage — hero to CTA journey', () => {
   test('has exactly one h1, matching the Hero content', async ({ page }) => {
@@ -37,7 +38,7 @@ test.describe('homepage — hero to CTA journey', () => {
 
   test('header primary CTA anchor resolves to an element on the page', async ({ page }) => {
     await page.goto('/')
-    const primaryCtaHref = page.locator('header a.bg-slate-900')
+    const primaryCtaHref = page.locator('header').getByRole('link', { name: navigation.primaryCta.label })
     const href = await primaryCtaHref.getAttribute('href')
     const anchorId = href?.split('#')[1]
     expect(anchorId).toBeTruthy()

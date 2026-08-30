@@ -13,17 +13,17 @@ export default function SocialProof() {
   }
 
   return (
-    <section className="py-10 bg-white border-y border-slate-100">
+    <section className="py-10 bg-white border-y border-mist-200">
       <div className="max-w-5xl mx-auto px-4">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
           {items.map(s => (
             <div key={s.id}>
-              <div className="text-3xl font-extrabold text-slate-900">
+              <div className="font-mono text-3xl font-extrabold text-ink-900">
                 {s.value}{s.suffix ?? ''}
               </div>
-              <div className="mt-1 text-sm text-slate-600">{s.label}</div>
+              <div className="mt-1 text-sm text-ink-900/70">{s.label}</div>
               {s.displayNote && (
-                <div className="mt-1 text-xs text-slate-600">{s.displayNote}</div>
+                <div className="mt-1 text-xs text-ink-900/70">{s.displayNote}</div>
               )}
             </div>
           ))}

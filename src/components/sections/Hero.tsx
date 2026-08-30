@@ -6,10 +6,10 @@ const { hero } = homepage as HomepageContent
 
 export default function Hero() {
   return (
-    <section className="py-16 bg-gradient-to-b from-white to-slate-50">
+    <section className="py-16 bg-gradient-to-b from-white to-paper-50">
       <div className="max-w-5xl mx-auto px-4 text-center">
-        <h1 className="text-4xl font-extrabold">{hero.title}</h1>
-        <p className="mt-4 text-lg text-slate-600">{hero.subtitle}</p>
+        <h1 className="font-display text-4xl font-extrabold text-ink-900">{hero.title}</h1>
+        <p className="mt-4 text-lg text-ink-900/70">{hero.subtitle}</p>
       </div>
     </section>
   )
