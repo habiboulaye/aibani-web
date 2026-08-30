@@ -103,10 +103,33 @@ export type HomepageFeatureItem = {
   availabilityNote?: string
 }
 
+export type ParcoursStep = {
+  role: string
+  action: string
+}
+
 export type HomepageContent = {
   hero: {
     title: string
     subtitle: string
+  }
+  problem: {
+    title: string
+    intro: string
+    conclusion: string
+    beforeLabel: string
+    afterLabel: string
+    before: string[]
+    after: string[]
+  }
+  solution: {
+    title: string
+    subtitle: string
+    steps: ParcoursStep[]
+    note: string
+    text: string
+    ctaLabel: string
+    ctaHref: string
   }
   features: {
     title: string

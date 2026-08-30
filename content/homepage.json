@@ -1,8 +1,46 @@
 {
-  "_note": "Extraction mécanique du texte précédemment codé en dur dans Hero.tsx/Features.tsx/CTA.tsx — copie identique, pas une réécriture. Aligner ce contenu sur docs/source-material/homepage-content-v1-recommandee.md reste un travail de Phase 3 à part entière (voir aibani-brand-voice + marketing-critic).",
+  "_note": "hero/features/finalCta restent une extraction mécanique du texte précédemment codé en dur — pas encore alignés sur docs/source-material/homepage-content-v1-recommandee.md (reste un travail de Phase 3 à part entière). problem/solution, ajoutés en Batch 2, sont eux verbatim depuis ce document (§2/§3), revus par marketing-critic + compliance-reviewer le 2026-08-31.",
   "hero": {
     "title": "Simplifier la gestion de soins",
     "subtitle": "AiBani aide les professionnels et établissements à mieux suivre leurs patients et optimiser les parcours."
+  },
+  "problem": {
+    "title": "Votre établissement mérite mieux que des agendas dispersés.",
+    "intro": "Entre les appels téléphoniques, les messages WhatsApp, les agendas papier, les fichiers Excel et les différents outils utilisés par chaque service, la gestion quotidienne peut rapidement devenir complexe.",
+    "conclusion": "AiBani rassemble l'essentiel au même endroit.",
+    "beforeLabel": "Avant AiBani",
+    "afterLabel": "Avec AiBani",
+    "before": [
+      "Rendez-vous difficiles à organiser",
+      "Informations dispersées",
+      "Temps perdu dans les tâches administratives",
+      "Difficulté à suivre l'activité",
+      "Gestion financière complexe",
+      "Communication difficile entre les équipes"
+    ],
+    "after": [
+      "Un agenda centralisé",
+      "Un dossier patient accessible selon vos droits",
+      "Une équipe organisée",
+      "Des opérations mieux structurées",
+      "Une gestion financière centralisée",
+      "Des indicateurs pour piloter votre activité"
+    ]
+  },
+  "solution": {
+    "title": "Un seul outil pour gérer votre activité de santé.",
+    "subtitle": "De la prise de rendez-vous au pilotage de votre établissement.",
+    "steps": [
+      { "role": "Patient", "action": "prend rendez-vous" },
+      { "role": "Réception", "action": "organise l'accueil" },
+      { "role": "Professionnel", "action": "consulte et suit le patient" },
+      { "role": "Administration", "action": "gère la facturation et les opérations" },
+      { "role": "Direction", "action": "pilote l'activité grâce aux données" }
+    ],
+    "note": "La prise de rendez-vous est gratuite. Les étapes suivantes s'activent avec les offres professionnelles.",
+    "text": "AiBani accompagne votre établissement tout au long du parcours, avec des outils adaptés à chaque membre de votre équipe.",
+    "ctaLabel": "Voir comment fonctionne AiBani",
+    "ctaHref": "/fonctionnalites"
   },
   "features": {
     "title": "Fonctionnalités clés",
