@@ -45,7 +45,7 @@ export default function DesignSystemPage() {
               <div className="h-16 rounded-control border border-mist-200" style={{ backgroundColor: s.hex }} />
               <div className="mt-3 font-mono text-xs text-ink-900">{s.name} — {s.hex}</div>
               <div className="mt-1 text-sm text-ink-900">{s.usage}</div>
-              <div className="mt-1 text-xs text-ink-900/60">{s.contrast}</div>
+              <div className="mt-1 text-xs text-ink-900/70">{s.contrast}</div>
             </Card>
           ))}
         </div>
@@ -55,27 +55,27 @@ export default function DesignSystemPage() {
         <h2 id="type-heading" className="font-display text-display-sm text-ink-900">Typographie</h2>
         <div className="mt-6 space-y-6">
           <div>
-            <p className="text-xs font-mono text-ink-900/60">font-display / display-lg (56px)</p>
+            <p className="text-xs font-mono text-ink-900/70">font-display / display-lg (56px)</p>
             <p className="font-display text-display-lg text-ink-900">{sampleCopy}</p>
           </div>
           <div>
-            <p className="text-xs font-mono text-ink-900/60">font-display / display-md (40px)</p>
+            <p className="text-xs font-mono text-ink-900/70">font-display / display-md (40px)</p>
             <p className="font-display text-display-md text-ink-900">{sampleCopy}</p>
           </div>
           <div>
-            <p className="text-xs font-mono text-ink-900/60">font-display / display-sm (28px)</p>
+            <p className="text-xs font-mono text-ink-900/70">font-display / display-sm (28px)</p>
             <p className="font-display text-display-sm text-ink-900">{sampleCopy}</p>
           </div>
           <div>
-            <p className="text-xs font-mono text-ink-900/60">font-sans / body-lg (20px)</p>
+            <p className="text-xs font-mono text-ink-900/70">font-sans / body-lg (20px)</p>
             <p className="font-sans text-body-lg text-ink-900">{sampleCopy}</p>
           </div>
           <div>
-            <p className="text-xs font-mono text-ink-900/60">font-sans / base (16px)</p>
+            <p className="text-xs font-mono text-ink-900/70">font-sans / base (16px)</p>
             <p className="font-sans text-base text-ink-900">{sampleCopy}</p>
           </div>
           <div>
-            <p className="text-xs font-mono text-ink-900/60">font-mono / sm (14px)</p>
+            <p className="text-xs font-mono text-ink-900/70">font-mono / sm (14px)</p>
             <p className="font-mono text-sm text-ink-900">15 000+ utilisateurs — 540+ centres de santé</p>
           </div>
         </div>
