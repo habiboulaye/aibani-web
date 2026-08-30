@@ -48,7 +48,9 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [18.x]
+        # @playwright/test requires Node 20+; the build job stays on 18.x
+        # to match the app's own runtime target, this job only runs tests.
+        node-version: [20.x]
 
     steps:
       - name: Checkout
