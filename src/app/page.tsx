@@ -1,5 +1,6 @@
 import React from 'react'
 import Hero from '../components/sections/Hero'
+import Testimonials from '../components/sections/Testimonials'
 import CTA from '../components/sections/CTA'
 
 export default function Home() {
@@ -10,6 +11,7 @@ export default function Home() {
         <h3 className="text-xl font-semibold">Bienvenue sur AiBani</h3>
         <p className="mt-3 text-slate-600">Prototype de la Phase 1 — continuer l'implémentation des sections.</p>
       </main>
+      <Testimonials />
       <CTA />
     </>
   )
