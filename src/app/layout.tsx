@@ -1,5 +1,7 @@
 import './globals.css'
 import React from 'react'
+import Header from '../components/layout/Header'
+import Footer from '../components/layout/Footer'
 
 export const metadata = {
   title: 'AiBani',
@@ -10,7 +12,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="fr">
       <body>
-        {children}
+        <Header />
+        <main className="min-h-[60vh]">{children}</main>
+        <Footer />
       </body>
     </html>
   )
