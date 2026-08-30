@@ -1,5 +1,5 @@
 Title: Phase 1 — Scaffolding Next.js + TypeScript + Tailwind
-Status: Proposed
+Status: Accepted (2026-08-30) — the `[locale]` routing structure this plan originally called for (line 10, `src/app/[locale]/page.tsx`) had been skipped in the actual scaffold; retrofitted before acceptance, see `docs/decisions/0009-i18n-routing-retrofit.md`.
 
 Contexte:
 Phase 1 prépare la base technique du projet: Next.js (App Router), TypeScript strict, Tailwind CSS, et les types pour le contenu (`content/*.json`). Ce document décrit la checklist minimale pour la PR de scaffolding.
@@ -16,11 +16,12 @@ Fichiers attendus dans la PR:
 - `README.md` mise à jour avec scripts et instructions locales
 
 Checklist PR (à inclure dans la description):
-- [ ] `npm run dev` démarre sans erreur
-- [ ] `npm run typecheck` passe (`tsc --noEmit`)
-- [ ] `npm run lint` OK
-- [ ] `content/*.json` importés et typés (ex: `src/lib/types/content-types.ts`)
-- [ ] `docs/decisions/0004-phase0-acceptance.md` et `0005-domain-and-legal.md` référencés
+- [x] `npm run dev` démarre sans erreur — vérifié le 2026-08-30
+- [x] `npm run typecheck` passe (`tsc --noEmit`)
+- [x] `npm run lint` OK
+- [x] `content/*.json` importés et typés (ex: `src/lib/types/content-types.ts`) — couvre désormais aussi `faq.json` et `segments/*.json`, validés par `tests/unit/content-types.test.ts`
+- [x] `docs/decisions/0004-phase0-acceptance.md` et `0005-domain-and-legal.md` référencés
+- [x] Structure `[locale]` en place (`src/app/[locale]/`, `src/middleware.ts`) — voir `docs/decisions/0009-i18n-routing-retrofit.md`
 
 Commande recommandée pour créer la PR (locale):
 ```

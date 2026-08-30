@@ -146,3 +146,33 @@ export type FooterColumn = {
   title: string
   links: NavLink[]
 }
+
+export type FaqItem = {
+  id: string
+  question: string
+  answer: string
+}
+
+export type FaqContent = {
+  items: FaqItem[]
+}
+
+export type Segment = {
+  id: string
+  slug: string
+  name: string
+  seoTitle: string
+  heroTitle: string
+  heroSubtitle: string
+  painPoints: string[]
+  highlightedFeatureIds: string[]
+  recommendedTierId: string
+  // 'available': fully built. 'network-only': real network presence, advanced
+  // management module still in construction — cf. content/segments/pharmacie.json
+  // and CLAUDE.md's "ne jamais afficher un module comme disponible partout".
+  maturity: 'available' | 'network-only'
+  maturityNote?: string
+  ctaLabel: string
+  trustSignalIds?: string[]
+  testimonialIds: string[]
+}
