@@ -1,6 +1,9 @@
 {
   "$schema": "./schema/pricing.schema.json",
   "_note": "Prix ancrés sur des repères de marché réels (Phénix, KiboERP, Clinicaa, Doctolib — voir docs/decisions/0003-pricing-benchmarked-tiers.md). Restent des hypothèses commerciales à confirmer sur le terrain, pas des tarifs figés définitivement. Modifier CE FICHIER pour changer un prix — jamais un composant.",
+  "title": "Nos offres",
+  "subtitle": "Prix indicatifs — voir le détail selon configuration.",
+  "patientNote": "Application patient gratuite — tarifs ci‑dessous = établissements.",
   "currency": "FCFA",
   "tiers": [
     {
@@ -9,8 +12,9 @@
       "price": 0,
       "priceLabel": "0 FCFA / mois",
       "priceNote": null,
+      "audienceBadge": "Pour établissements — acquisition patient gratuite",
       "tagline": "Pour commencer",
-      "ctaLabel": "Créer mon établissement gratuitement",
+      "ctaLabel": "Commencer l'essai gratuit",
       "ctaStyle": "primary",
       "featureIds": [
         "profile", "network-presence", "appointments", "availability",
@@ -29,7 +33,7 @@
       "maxPractitioners": 5,
       "priceAtMaxPractitioners": 65000,
       "tagline": "Pour les cabinets et centres de santé",
-      "ctaLabel": "Essayer gratuitement 30 jours",
+      "ctaLabel": "Commencer l'essai gratuit",
       "ctaStyle": "primary",
       "includesTierId": "connect",
       "featureIds": [
@@ -61,9 +65,10 @@
       "name": "AiBani Groupe",
       "price": null,
       "priceLabel": "Sur devis",
-      "priceNote": "Repère interne (non public) : ~400 000-500 000 FCFA/mois selon configuration — cf. ADR-0003",
+      "priceNote": "Sur devis — nous contacter pour une estimation selon configuration.",
       "tagline": "Pour les réseaux, grands établissements et organisations de santé",
-      "ctaLabel": "Parler à un expert AiBani",
+      "ctaLabel": "Demander un devis personnalisé",
+      "audienceBadge": "Pour réseaux & groupes",
       "ctaStyle": "secondary",
       "includesTierId": "clinic",
       "featureIds": [
