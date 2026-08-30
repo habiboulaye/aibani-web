@@ -23,7 +23,7 @@ export default function SocialProof() {
               </div>
               <div className="mt-1 text-sm text-slate-600">{s.label}</div>
               {s.displayNote && (
-                <div className="mt-1 text-xs text-slate-400">{s.displayNote}</div>
+                <div className="mt-1 text-xs text-slate-600">{s.displayNote}</div>
               )}
             </div>
           ))}

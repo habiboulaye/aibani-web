@@ -43,7 +43,7 @@ export default function Pricing() {
                           <span>
                             {feature.label}
                             {feature.availabilityNote && (
-                              <span className="text-slate-500"> ({feature.availabilityNote})</span>
+                              <span className="text-slate-600"> ({feature.availabilityNote})</span>
                             )}
                           </span>
                         </li>
