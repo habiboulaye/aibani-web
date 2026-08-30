@@ -1,0 +1,19 @@
+{
+  "id": "clinique",
+  "slug": "clinique",
+  "name": "Clinique",
+  "seoTitle": "Logiciel de gestion de clinique au Bénin | AiBani",
+  "heroTitle": "AiBani pour les cliniques",
+  "heroSubtitle": "Coordonnez vos équipes, services, patients et opérations depuis une seule plateforme.",
+  "painPoints": [
+    "Coordination difficile entre plusieurs praticiens et services",
+    "Facturation dispersée, absence de vision consolidée",
+    "Pas de reporting en temps réel sur l'activité",
+    "Gestion des rôles et permissions inexistante ou artisanale"
+  ],
+  "highlightedFeatureIds": ["multi-user", "roles-permissions", "services-management", "advanced-billing", "advanced-stats"],
+  "recommendedTierId": "clinic",
+  "maturity": "available",
+  "ctaLabel": "Solution pour clinique",
+  "testimonialIds": []
+}

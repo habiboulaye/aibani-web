@@ -1,0 +1,22 @@
+{
+  "_note": "Signaux de confiance institutionnels (autorisations, reconnaissances officielles) — distincts des témoignages clients (content/testimonials.json). Règle stricte : ne jamais reformuler une autorisation administrative en soutien/partenariat/recommandation du produit. Voir .claude/skills/aibani-compliance-check/SKILL.md.",
+  "signals": [
+    {
+      "id": "cnopb-authorization",
+      "issuer": "Conseil National de l'Ordre des Pharmaciens du Bénin (CNOPB)",
+      "type": "authorization",
+      "date": "2026-07-16",
+      "reference": "220-07/2026/CNOPB/P/SE",
+      "scope": "Autorisation de prise de contact avec les pharmaciens du Bénin au sujet de l'application AiBani",
+      "publicStatement": "AiBani a reçu du Conseil National de l'Ordre des Pharmaciens du Bénin l'autorisation de prendre contact avec les pharmaciens du pays pour présenter l'application — une reconnaissance institutionnelle de la démarche engagée auprès de la profession.",
+      "doNotClaim": [
+        "Endorsement ou recommandation du produit par l'Ordre",
+        "Partenariat officiel avec l'Ordre",
+        "Certification ou validation du produit par l'Ordre"
+      ],
+      "sourceDocument": "docs/source-material/2026-07-16_cnopb-autorisation-pharmaciens.pdf",
+      "displaySegments": ["pharmacie"],
+      "confirmed": true
+    }
+  ]
+}

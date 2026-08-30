@@ -1,0 +1,18 @@
+{
+  "id": "etablissement",
+  "slug": "etablissement",
+  "name": "Établissement de santé / réseau",
+  "seoTitle": "Digitalisation des établissements de santé en Afrique | AiBani",
+  "heroTitle": "AiBani pour les grands établissements et réseaux de santé",
+  "heroSubtitle": "Une solution évolutive pour accompagner les organisations complexes, multi-sites et multi-services.",
+  "painPoints": [
+    "Multi-sites difficiles à consolider dans un même outil",
+    "Besoin d'intégrations avec des systèmes existants",
+    "Exigences de reporting et de sécurité renforcées"
+  ],
+  "highlightedFeatureIds": ["multi-site", "integrations", "api", "dedicated-support", "custom-configuration"],
+  "recommendedTierId": "groupe",
+  "maturity": "available",
+  "ctaLabel": "Parler à un expert",
+  "testimonialIds": []
+}

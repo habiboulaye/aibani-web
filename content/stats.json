@@ -1,0 +1,48 @@
+{
+  "_note": "Règle stricte (cf. docs/specs/08-security-compliance.md) : 'confirmed: false' => le bloc correspondant est masqué en production, jamais affiché avec un placeholder XXX.",
+  "stats": [
+    {
+      "id": "patients-users",
+      "value": 15000,
+      "suffix": "+",
+      "label": "Utilisateurs au Bénin",
+      "confirmed": true
+    },
+    {
+      "id": "connected-health-centers",
+      "value": 540,
+      "suffix": "+",
+      "label": "Centres de santé connectés au réseau",
+      "confirmed": true
+    },
+    {
+      "id": "connected-pharmacies",
+      "value": 280,
+      "suffix": "+",
+      "label": "Pharmacies connectées au réseau",
+      "confirmed": true
+    },
+    {
+      "id": "countries-available",
+      "value": 10,
+      "suffix": null,
+      "label": "Pays où l'application est disponible au téléchargement",
+      "confirmed": true,
+      "displayNote": "Portée de l'application (téléchargement), pas de réseau d'établissements actif hors Bénin — ne pas présenter comme une preuve d'activité commerciale multi-pays. Voir docs/specs/02-business-model.md, phase d'expansion."
+    },
+    {
+      "id": "active-professionals",
+      "value": null,
+      "suffix": "+",
+      "label": "Professionnels actifs",
+      "confirmed": false
+    },
+    {
+      "id": "appointments-completed",
+      "value": null,
+      "suffix": "+",
+      "label": "Rendez-vous réalisés",
+      "confirmed": false
+    }
+  ]
+}

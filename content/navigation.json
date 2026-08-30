@@ -1,0 +1,67 @@
+{
+  "primary": [
+    { "label": "Pour les professionnels", "type": "dropdown", "children": [
+      { "label": "Cabinet médical", "href": "/solutions/cabinet" },
+      { "label": "Clinique", "href": "/solutions/clinique" },
+      { "label": "Laboratoire", "href": "/solutions/laboratoire" },
+      { "label": "Pharmacie", "href": "/solutions/pharmacie" },
+      { "label": "Établissement / réseau", "href": "/solutions/etablissement" }
+    ]},
+    { "label": "Fonctionnalités", "href": "/fonctionnalites" },
+    { "label": "Tarifs", "href": "/tarifs" },
+    { "label": "Sécurité", "href": "/securite" },
+    { "label": "Ressources", "type": "dropdown", "children": [
+      { "label": "Centre d'aide", "href": "/ressources/aide" },
+      { "label": "FAQ", "href": "/ressources/faq" }
+    ]}
+  ],
+  "secondary": [
+    { "label": "Vous êtes patient ?", "href": "/patients" },
+    { "label": "Se connecter", "href": "https://app.myaibani.com/login", "external": true }
+  ],
+  "primaryCta": { "label": "Créer mon établissement — gratuit", "href": "/tarifs#connect" },
+  "activeCountries": ["BJ"],
+  "locales": {
+    "active": ["fr", "en"],
+    "default": "fr",
+    "roadmap": ["ar", "es"],
+    "_note": "Décidé le 2026-08-29 : FR+EN au lancement. AR ajouté en priorité sur ES, ES selon opportunités. Ne jamais afficher un sélecteur pour une langue absente de 'active' — cf. 08-security-compliance.md et le principe général de ne rien promettre de non fonctionnel."
+  },
+  "_note": "L'application est téléchargeable dans 10 pays (cf. content/stats.json, countries-available), mais l'activité commerciale hors Bénin est en cours de démarrage. Ne pas étendre activeCountries tant qu'un réseau d'établissements actif n'est pas confirmé dans un nouveau pays (cf. docs/specs/02-business-model.md, phase d'expansion).",
+  "contact": {
+    "phones": [
+      { "country": "Bénin", "label": "Support Bénin", "number": "+229 01 54 04 71 70", "primary": true },
+      { "country": "France", "label": "Bureau France", "number": "+33 (0)1 84 00 00 00", "primary": false }
+    ]
+  },
+  "footer": {
+    "solutions": [
+      { "label": "Pour les patients", "href": "/patients" },
+      { "label": "Pour les cabinets", "href": "/solutions/cabinet" },
+      { "label": "Pour les cliniques", "href": "/solutions/clinique" },
+      { "label": "Pour les laboratoires", "href": "/solutions/laboratoire" },
+      { "label": "Pour les pharmacies", "href": "/solutions/pharmacie" },
+      { "label": "Pour les établissements de santé", "href": "/solutions/etablissement" }
+    ],
+    "product": [
+      { "label": "Fonctionnalités", "href": "/fonctionnalites" },
+      { "label": "Tarifs", "href": "/tarifs" },
+      { "label": "Démonstration", "href": "/demo" }
+    ],
+    "company": [
+      { "label": "À propos", "href": "/a-propos" },
+      { "label": "Contact", "href": "/contact" }
+    ],
+    "trust": [
+      { "label": "Sécurité", "href": "/securite" },
+      { "label": "Mentions légales", "href": "/mentions-legales" },
+      { "label": "Confidentialité", "href": "/confidentialite" },
+      { "label": "Conditions d'utilisation", "href": "/cgu" }
+    ],
+    "support": [
+      { "label": "Centre d'aide", "href": "/ressources/aide" },
+      { "label": "FAQ", "href": "/ressources/faq" },
+      { "label": "Contact", "href": "/contact" }
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "id": "pharmacie",
+  "slug": "pharmacie",
+  "name": "Pharmacie",
+  "seoTitle": "Digitalisation des pharmacies au Bénin | AiBani",
+  "heroTitle": "AiBani pour les pharmacies",
+  "heroSubtitle": "Déjà 280+ pharmacies connectées au réseau AiBani. Le module de gestion avancée arrive bientôt.",
+  "painPoints": [
+    "Peu d'intégration numérique avec les prescripteurs du réseau",
+    "Visibilité limitée auprès des patients recherchant une pharmacie"
+  ],
+  "highlightedFeatureIds": ["network-presence", "pharmacy"],
+  "trustSignalIds": ["cnopb-authorization"],
+  "recommendedTierId": "clinic",
+  "maturity": "network-only",
+  "maturityNote": "280+ pharmacies sont déjà visibles et connectées gratuitement au réseau AiBani (présence, réception de demandes). Le module de gestion avancée (inventaire, dispensation) est en cours de construction — laissez vos coordonnées pour être informé du lancement.",
+  "ctaLabel": "Rejoindre le réseau gratuitement",
+  "testimonialIds": []
+}

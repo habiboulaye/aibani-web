@@ -1,0 +1,19 @@
+{
+  "id": "cabinet",
+  "slug": "cabinet",
+  "name": "Cabinet médical",
+  "seoTitle": "Logiciel de gestion de cabinet médical au Bénin | AiBani",
+  "heroTitle": "AiBani pour les cabinets médicaux",
+  "heroSubtitle": "Gérez vos patients, rendez-vous, consultations et facturation depuis une seule plateforme.",
+  "painPoints": [
+    "Agenda papier ou Excel difficile à tenir à jour",
+    "Appels téléphoniques incessants pour la prise de rendez-vous",
+    "Suivi patient dispersé entre plusieurs outils",
+    "Facturation et encaissement gérés manuellement"
+  ],
+  "highlightedFeatureIds": ["patient-management", "consultations", "billing", "mobile-money", "cash-register"],
+  "recommendedTierId": "cabinet",
+  "maturity": "available",
+  "ctaLabel": "Solution pour cabinet",
+  "testimonialIds": []
+}

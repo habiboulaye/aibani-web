@@ -1,0 +1,18 @@
+{
+  "id": "laboratoire",
+  "slug": "laboratoire",
+  "name": "Laboratoire / centre d'imagerie",
+  "seoTitle": "Logiciel de gestion de laboratoire d'analyses au Bénin | AiBani",
+  "heroTitle": "AiBani pour les laboratoires et centres d'imagerie",
+  "heroSubtitle": "Recevez les demandes d'examens de vos prescripteurs, suivez les dossiers, facturez — sans ressaisie.",
+  "painPoints": [
+    "Suivi des demandes d'examens et résultats dispersé",
+    "Lien avec les prescripteurs peu digitalisé",
+    "Facturation manuelle des actes"
+  ],
+  "highlightedFeatureIds": ["appointment-requests", "patient-records", "billing", "laboratory"],
+  "recommendedTierId": "clinic",
+  "maturity": "available",
+  "ctaLabel": "Solution pour laboratoire",
+  "testimonialIds": []
+}

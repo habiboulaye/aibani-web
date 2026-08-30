@@ -1,0 +1,54 @@
+{
+  "items": [
+    {
+      "id": "free-appointments",
+      "question": "Les rendez-vous sont-ils vraiment gratuits ?",
+      "answer": "Oui. La création du profil de votre établissement et la prise de rendez-vous via AiBani sont proposées gratuitement. Les fonctionnalités professionnelles de gestion sont disponibles dans les offres payantes."
+    },
+    {
+      "id": "trial",
+      "question": "Puis-je essayer AiBani avant de payer ?",
+      "answer": "Oui. Contactez notre équipe pour connaître les conditions d'essai et mettre en place votre établissement."
+    },
+    {
+      "id": "devices",
+      "question": "AiBani fonctionne-t-il sur ordinateur ?",
+      "answer": "Oui. AiBani est développé pour être accessible sur mobile, Web et Desktop selon les versions disponibles."
+    },
+    {
+      "id": "team-members",
+      "question": "Puis-je ajouter plusieurs membres à mon équipe ?",
+      "answer": "Oui. Les offres professionnelles permettent d'ajouter des utilisateurs et de définir leurs rôles et permissions selon la configuration de votre établissement."
+    },
+    {
+      "id": "multi-service",
+      "question": "Puis-je gérer plusieurs services ?",
+      "answer": "Oui. Les offres destinées aux établissements structurés permettent de gérer plusieurs services selon votre configuration."
+    },
+    {
+      "id": "clinic-fit",
+      "question": "AiBani est-il adapté aux cliniques ?",
+      "answer": "Oui. AiBani propose des fonctionnalités adaptées aux cabinets, centres de santé et cliniques, avec des possibilités d'évolution selon les besoins de l'établissement."
+    },
+    {
+      "id": "data-security",
+      "question": "Comment mes données sont-elles protégées ?",
+      "answer": "La sécurité et la confidentialité des données font partie des priorités d'AiBani. Nous mettons en œuvre des mécanismes de contrôle des accès, de protection et de sécurisation adaptés à notre service."
+    },
+    {
+      "id": "onboarding-support",
+      "question": "Puis-je être accompagné pour la mise en place ?",
+      "answer": "Oui. Notre équipe peut vous accompagner dans la configuration de votre établissement et la prise en main de la plateforme."
+    },
+    {
+      "id": "plan-change",
+      "question": "Puis-je changer d'offre ?",
+      "answer": "Oui. Votre établissement peut évoluer vers une offre correspondant davantage à ses besoins."
+    },
+    {
+      "id": "other-countries",
+      "question": "AiBani est-il disponible dans d'autres pays ?",
+      "answer": "AiBani est actuellement développé autour du marché béninois et a vocation à accompagner progressivement les professionnels et établissements de santé dans d'autres marchés africains."
+    }
+  ]
+}
