@@ -27,6 +27,7 @@
 | 8 | Numéro de support local | **+229 01 54 04 71 70** (Bénin, prioritaire) affiché à côté du numéro français existant | 2026-08-29 | `content/navigation.json`, `docs/specs/04-content-pages.md` |
 | 9 | Domaine et bascule | **`aibani.health`** (disponibilité à confirmer) remplace **définitivement** myAibani.com, avec redirections 301 page à page maintenues 6-12 mois | 2026-08-29 | `docs/specs/07-seo-strategy.md`, `docs/specs/12-roadmap.md` (Phase 10) |
 | 10 | Périmètre linguistique | **Français + Anglais actifs au lancement.** Arabe en priorité, puis Espagnol selon les opportunités (roadmap, pas au lancement) | 2026-08-29 | `content/navigation.json`, `docs/specs/06-technical-architecture.md`, `07-seo-strategy.md`, `03-information-architecture.md` |
+| 11 | Hébergement des previews par PR | **Vercel** (zero-config Next.js App Router). Distinct de l'hébergement de production (Hostinger, point 3) : Vercel ne sert qu'aux URLs de preview par pull request exigées par `10-testing-qa-cicd.md`. | 2026-08-30 | `docs/decisions/0007-preview-hosting-vercel.md` |
 
 ## Décisions qui nécessitent réellement votre arbitrage
 
