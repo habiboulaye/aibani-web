@@ -1,5 +1,4 @@
 {
-  "$schema": "./schema/pricing.schema.json",
   "_note": "Prix ancrés sur des repères de marché réels (Phénix, KiboERP, Clinicaa, Doctolib — voir docs/decisions/0003-pricing-benchmarked-tiers.md). Restent des hypothèses commerciales à confirmer sur le terrain, pas des tarifs figés définitivement. Modifier CE FICHIER pour changer un prix — jamais un composant.",
   "title": "Nos offres",
   "subtitle": "Prix indicatifs — voir le détail selon configuration.",
@@ -17,8 +16,13 @@
       "ctaLabel": "Commencer l'essai gratuit",
       "ctaStyle": "primary",
       "featureIds": [
-        "profile", "network-presence", "appointments", "availability",
-        "calendar", "appointment-requests", "basic-user-management"
+        "profile",
+        "network-presence",
+        "appointments",
+        "availability",
+        "calendar",
+        "appointment-requests",
+        "basic-user-management"
       ],
       "microcopy": "Aucune carte bancaire requise. Aucun engagement."
     },
@@ -33,13 +37,21 @@
       "maxPractitioners": 5,
       "priceAtMaxPractitioners": 65000,
       "tagline": "Pour les cabinets et centres de santé",
-      "ctaLabel": "Commencer l'essai gratuit",
+      "ctaLabel": "Essayer gratuitement 30 jours",
       "ctaStyle": "primary",
       "includesTierId": "connect",
       "featureIds": [
-        "patient-management", "patient-records", "consultations", "history",
-        "prescriptions", "cash-register", "billing", "payments",
-        "mobile-money", "basic-stats", "advanced-team-management"
+        "patient-management",
+        "patient-records",
+        "consultations",
+        "history",
+        "prescriptions",
+        "cash-register",
+        "billing",
+        "payments",
+        "mobile-money",
+        "basic-stats",
+        "advanced-team-management"
       ],
       "microcopy": "Mise en place et accompagnement inclus."
     },
@@ -47,16 +59,23 @@
       "id": "clinic",
       "name": "AiBani Clinic",
       "price": 180000,
-      "priceLabel": "180 000 FCFA / mois",
+      "priceLabel": "À partir de 180 000 FCFA / mois",
       "priceNote": "Prix ancré sur repère de marché régional (cf. ADR-0003) — dépend de utilisateurs/sites/modules/volume, jamais uniquement du nombre de lits",
       "tagline": "Pour les cliniques et établissements structurés",
       "ctaLabel": "Demander une démonstration",
       "ctaStyle": "secondary",
       "includesTierId": "cabinet",
       "featureIds": [
-        "multi-user", "services-management", "roles-permissions",
-        "hospitalization", "operations-management", "laboratory",
-        "pharmacy", "advanced-billing", "advanced-stats", "multi-service"
+        "multi-user",
+        "services-management",
+        "roles-permissions",
+        "hospitalization",
+        "operations-management",
+        "laboratory",
+        "pharmacy",
+        "advanced-billing",
+        "advanced-stats",
+        "multi-service"
       ],
       "microcopy": "Nous adaptons la configuration à votre établissement."
     },
@@ -67,61 +86,161 @@
       "priceLabel": "Sur devis",
       "priceNote": "Sur devis — nous contacter pour une estimation selon configuration.",
       "tagline": "Pour les réseaux, grands établissements et organisations de santé",
-      "ctaLabel": "Demander un devis personnalisé",
+      "ctaLabel": "Parler à un expert",
       "audienceBadge": "Pour réseaux & groupes",
       "ctaStyle": "secondary",
       "includesTierId": "clinic",
       "featureIds": [
-        "multi-site", "advanced-users", "integrations", "api",
-        "custom-reporting", "assisted-deployment", "dedicated-support",
-        "custom-configuration", "on-premise-hosting"
+        "multi-site",
+        "advanced-users",
+        "integrations",
+        "api",
+        "custom-reporting",
+        "assisted-deployment",
+        "dedicated-support",
+        "custom-configuration",
+        "on-premise-hosting"
       ],
       "microcopy": null
     }
   ],
   "standaloneModules": [
-    { "id": "insurance", "name": "Assurance", "availability": "roadmap" },
-    { "id": "imaging", "name": "Imagerie", "availability": "roadmap" },
-    { "id": "telemedicine", "name": "Téléconsultation", "availability": "roadmap" },
-    { "id": "ai-assistant", "name": "IA (productivité administrative)", "availability": "roadmap" }
+    {
+      "id": "insurance",
+      "name": "Assurance",
+      "availability": "roadmap"
+    },
+    {
+      "id": "imaging",
+      "name": "Imagerie",
+      "availability": "roadmap"
+    },
+    {
+      "id": "telemedicine",
+      "name": "Téléconsultation",
+      "availability": "roadmap"
+    },
+    {
+      "id": "ai-assistant",
+      "name": "IA (productivité administrative)",
+      "availability": "roadmap"
+    }
   ],
   "features": {
-    "profile": { "label": "Profil de l'établissement" },
-    "network-presence": { "label": "Présence sur le réseau AiBani" },
-    "appointments": { "label": "Rendez-vous" },
-    "availability": { "label": "Gestion des disponibilités" },
-    "calendar": { "label": "Agenda" },
-    "appointment-requests": { "label": "Demandes de rendez-vous" },
-    "basic-user-management": { "label": "Gestion de base des utilisateurs" },
-    "patient-management": { "label": "Gestion des patients" },
-    "patient-records": { "label": "Dossiers patients" },
-    "consultations": { "label": "Consultations" },
-    "history": { "label": "Historique" },
-    "prescriptions": { "label": "Ordonnances", "availabilityNote": "selon les fonctionnalités disponibles" },
-    "cash-register": { "label": "Caisse" },
-    "billing": { "label": "Facturation" },
-    "payments": { "label": "Paiements" },
-    "mobile-money": { "label": "Mobile Money", "availabilityNote": "selon intégration" },
-    "basic-stats": { "label": "Statistiques" },
-    "advanced-team-management": { "label": "Gestion avancée de l'équipe" },
-    "multi-user": { "label": "Gestion multi-utilisateurs" },
-    "services-management": { "label": "Gestion des services" },
-    "roles-permissions": { "label": "Rôles et permissions" },
-    "hospitalization": { "label": "Hospitalisation", "availabilityNote": "selon configuration et modules souscrits" },
-    "operations-management": { "label": "Gestion opérationnelle" },
-    "laboratory": { "label": "Laboratoire" },
-    "pharmacy": { "label": "Pharmacie" },
-    "advanced-billing": { "label": "Facturation avancée" },
-    "advanced-stats": { "label": "Statistiques et rapports" },
-    "multi-service": { "label": "Gestion multi-services" },
-    "multi-site": { "label": "Plusieurs établissements / sites" },
-    "advanced-users": { "label": "Utilisateurs avancés" },
-    "integrations": { "label": "Intégrations", "availabilityNote": "selon offre" },
-    "api": { "label": "API" },
-    "custom-reporting": { "label": "Reporting personnalisé" },
-    "assisted-deployment": { "label": "Déploiement accompagné" },
-    "dedicated-support": { "label": "Support dédié" },
-    "custom-configuration": { "label": "Configuration spécifique" },
-    "on-premise-hosting": { "label": "Option d'hébergement sur site (serveurs locaux de l'établissement)" }
+    "profile": {
+      "label": "Profil de l'établissement"
+    },
+    "network-presence": {
+      "label": "Présence sur le réseau AiBani"
+    },
+    "appointments": {
+      "label": "Rendez-vous"
+    },
+    "availability": {
+      "label": "Gestion des disponibilités"
+    },
+    "calendar": {
+      "label": "Agenda"
+    },
+    "appointment-requests": {
+      "label": "Demandes de rendez-vous"
+    },
+    "basic-user-management": {
+      "label": "Gestion de base des utilisateurs"
+    },
+    "patient-management": {
+      "label": "Gestion des patients"
+    },
+    "patient-records": {
+      "label": "Dossiers patients"
+    },
+    "consultations": {
+      "label": "Consultations"
+    },
+    "history": {
+      "label": "Historique"
+    },
+    "prescriptions": {
+      "label": "Ordonnances",
+      "availabilityNote": "selon les fonctionnalités disponibles"
+    },
+    "cash-register": {
+      "label": "Caisse"
+    },
+    "billing": {
+      "label": "Facturation"
+    },
+    "payments": {
+      "label": "Paiements"
+    },
+    "mobile-money": {
+      "label": "Mobile Money",
+      "availabilityNote": "selon intégration"
+    },
+    "basic-stats": {
+      "label": "Statistiques"
+    },
+    "advanced-team-management": {
+      "label": "Gestion avancée de l'équipe"
+    },
+    "multi-user": {
+      "label": "Gestion multi-utilisateurs"
+    },
+    "services-management": {
+      "label": "Gestion des services"
+    },
+    "roles-permissions": {
+      "label": "Rôles et permissions"
+    },
+    "hospitalization": {
+      "label": "Hospitalisation",
+      "availabilityNote": "selon configuration et modules souscrits"
+    },
+    "operations-management": {
+      "label": "Gestion opérationnelle"
+    },
+    "laboratory": {
+      "label": "Laboratoire"
+    },
+    "pharmacy": {
+      "label": "Pharmacie"
+    },
+    "advanced-billing": {
+      "label": "Facturation avancée"
+    },
+    "advanced-stats": {
+      "label": "Statistiques et rapports"
+    },
+    "multi-service": {
+      "label": "Gestion multi-services"
+    },
+    "multi-site": {
+      "label": "Plusieurs établissements / sites"
+    },
+    "advanced-users": {
+      "label": "Utilisateurs avancés"
+    },
+    "integrations": {
+      "label": "Intégrations",
+      "availabilityNote": "selon offre"
+    },
+    "api": {
+      "label": "API"
+    },
+    "custom-reporting": {
+      "label": "Reporting personnalisé"
+    },
+    "assisted-deployment": {
+      "label": "Déploiement accompagné"
+    },
+    "dedicated-support": {
+      "label": "Support dédié"
+    },
+    "custom-configuration": {
+      "label": "Configuration spécifique"
+    },
+    "on-premise-hosting": {
+      "label": "Option d'hébergement sur site (serveurs locaux de l'établissement)"
+    }
   }
 }
