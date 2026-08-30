@@ -28,3 +28,11 @@ Approbateurs:
 
 Conséquences:
 - Après signature, passer à Phase 1 (scaffolding Next.js). Tant que non signé, aucun déploiement public.
+
+## Liste complète des champs `confirmed:false`
+
+- `content/stats.json`:
+	- `active_professionals` — label: "Professionnels actifs" — value: null — `confirmed: false`
+	- `appointments-completed` — label: "Rendez-vous réalisés" — value: null — `confirmed: false`
+
+Recommandation: Ne pas afficher ces blocs en production tant que `confirmed` n'est pas `true`. Documenter l'origine des données et fournir une preuve (export, rapport, capture d'écran) avant publication.
