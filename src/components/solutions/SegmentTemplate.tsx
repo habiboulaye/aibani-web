@@ -4,6 +4,7 @@ import trustSignalsContent from '../../../content/trust-signals.json'
 import solutions from '../../../content/solutions.json'
 import type { Segment, PricingContent, TrustSignalsContent, SolutionsContent } from '../../lib/types/content-types'
 import { localizeHref } from '../../lib/i18n/localizeHref'
+import { absoluteUrl } from '../../lib/seo'
 import Card from '../ui/Card'
 import Button from '../ui/Button'
 
@@ -27,8 +28,20 @@ export default function SegmentTemplate({ segment, locale }: { segment: Segment;
     s => s.displaySegments.includes(segment.id) && (segment.trustSignalIds ?? []).includes(s.id) && s.confirmed
   )
 
+  // docs/specs/07-seo-strategy.md: BreadcrumbList on the "deep" solution pages.
+  const breadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Accueil', item: absoluteUrl(`/${locale}`) },
+      { '@type': 'ListItem', position: 2, name: 'Solutions', item: absoluteUrl(`/${locale}/solutions`) },
+      { '@type': 'ListItem', position: 3, name: segment.name, item: absoluteUrl(`/${locale}/solutions/${segment.slug}`) }
+    ]
+  }
+
   return (
     <div>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       <section className="py-16 bg-gradient-to-b from-white to-paper-50">
         <div className="max-w-3xl mx-auto px-4 text-center">
           <h1 className="font-display text-4xl font-extrabold text-ink-900">{segment.heroTitle}</h1>

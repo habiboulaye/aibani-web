@@ -113,7 +113,13 @@ export type NetworkStep = {
   detail: string
 }
 
+export type SeoMeta = {
+  title: string
+  description: string
+}
+
 export type HomepageContent = {
+  meta: SeoMeta
   hero: {
     title: string
     subtitle: string
@@ -219,6 +225,7 @@ export type Segment = {
   slug: string
   name: string
   seoTitle: string
+  seoDescription: string
   heroTitle: string
   heroSubtitle: string
   painPoints: string[]
@@ -239,6 +246,7 @@ export type SolutionsContent = {
     title: string
     intro: string
   }
+  meta: SeoMeta
   painPointsLabel: string
   featuresLabel: string
   recommendedTierLabel: string
@@ -252,6 +260,7 @@ export type PatientStep = {
 
 export type PatientsContent = {
   title: string
+  seoDescription: string
   subtitle: string
   howItWorksTitle: string
   steps: PatientStep[]
@@ -301,6 +310,7 @@ export type DemoFormContent = {
 
 export type DemoContent = {
   hero: { title: string; subtitle: string }
+  seoDescription: string
   form: DemoFormContent
 }
 
@@ -319,6 +329,7 @@ export type TarifsTierCta = {
 
 export type TarifsContent = {
   title: string
+  seoDescription: string
   intro: string
   socialProofIntro: string
   comparisonTitle: string

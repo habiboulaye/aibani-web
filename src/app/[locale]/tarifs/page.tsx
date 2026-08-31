@@ -5,6 +5,7 @@ import homepageContent from '../../../../content/homepage.json'
 import type { PricingContent, TarifsContent, HomepageContent } from '../../../lib/types/content-types'
 import { ctaHref } from '../../../lib/pricing'
 import { localizeHref } from '../../../lib/i18n/localizeHref'
+import { buildMetadata } from '../../../lib/seo'
 import Button from '../../../components/ui/Button'
 import Badge from '../../../components/ui/Badge'
 import SocialProof from '../../../components/sections/SocialProof'
@@ -17,13 +18,48 @@ const { finalCta } = homepageContent as HomepageContent
 const { tiers, features, currency, standaloneModules } = pricing
 const comingModules = standaloneModules.filter(m => m.availability === 'roadmap')
 
-export const metadata = { title: tarifs.title }
+export function generateMetadata({ params }: { params: { locale: string } }) {
+  return buildMetadata({
+    locale: params.locale,
+    path: '/tarifs',
+    title: tarifs.title,
+    description: tarifs.seoDescription
+  })
+}
+
+// docs/specs/07-seo-strategy.md: SoftwareApplication/Product structured data
+// on /tarifs. Only tiers with a real public price become an Offer — Groupe's
+// price: null ("sur devis") is omitted rather than rendered as a fake 0,
+// matching the same never-invent-a-number rule enforced everywhere else.
+// schema.org's priceCurrency requires an ISO 4217 code — pricing.json's
+// `currency` field ("FCFA") is display text, not that code, so it's not
+// reused here; Bénin uses the West African CFA franc, ISO code XOF.
+const SCHEMA_PRICE_CURRENCY = 'XOF'
+
+const softwareApplicationJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'AiBani',
+  applicationCategory: 'BusinessApplication',
+  offers: tiers
+    .filter(tier => tier.price !== null)
+    .map(tier => ({
+      '@type': 'Offer',
+      name: tier.name,
+      price: tier.price,
+      priceCurrency: SCHEMA_PRICE_CURRENCY
+    }))
+}
 
 export default function TarifsPage({ params }: { params: { locale: string } }) {
   const { locale } = params
 
   return (
     <div className="py-16 bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationJsonLd) }}
+      />
       <div className="max-w-5xl mx-auto px-4">
         <div className="text-center max-w-2xl mx-auto">
           <h1 className="font-display text-3xl font-semibold text-ink-900">{tarifs.title}</h1>

@@ -4,6 +4,7 @@
     "title": "Demandez une démonstration personnalisée",
     "subtitle": "Notre équipe vous présente AiBani adapté à votre établissement, sans engagement."
   },
+  "seoDescription": "Demandez une démonstration personnalisée d'AiBani, le logiciel de gestion pour établissements de santé, sans engagement.",
   "form": {
     "fields": {
       "name": { "label": "Nom" },

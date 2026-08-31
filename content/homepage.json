@@ -1,5 +1,9 @@
 {
   "_note": "hero/features/finalCta restent une extraction mécanique du texte précédemment codé en dur — pas encore alignés sur docs/source-material/homepage-content-v1-recommandee.md (reste un travail de Phase 3 à part entière). problem/solution (Batch 2), forWho/patientNetwork (Batch 3) et security (Batch 4) sont eux verbatim depuis ce document (§2/§3/§6/§4/§18) — security.hosting/security.compliance sont eux repris mot pour mot de docs/specs/08-security-compliance.md, l'autorité la plus précise pour cette section. Tous revus par marketing-critic + compliance-reviewer.",
+  "meta": {
+    "title": "AiBani | Logiciel de gestion pour établissements de santé en Afrique",
+    "description": "AiBani aide les professionnels et établissements de santé à gérer leurs patients, rendez-vous, consultations, équipes et opérations depuis une seule plateforme. La prise de rendez-vous est gratuite."
+  },
   "hero": {
     "title": "Simplifier la gestion de soins",
     "subtitle": "AiBani aide les professionnels et établissements à mieux suivre leurs patients et optimiser les parcours."

@@ -8,10 +8,15 @@ import pharmacie from '../../../../content/segments/pharmacie.json'
 import etablissement from '../../../../content/segments/etablissement.json'
 import type { Segment, SolutionsContent, HomepageContent } from '../../../lib/types/content-types'
 import { localizeHref } from '../../../lib/i18n/localizeHref'
+import { buildMetadata } from '../../../lib/seo'
 import Card from '../../../components/ui/Card'
 import Button from '../../../components/ui/Button'
 
-const { hub } = solutions as SolutionsContent
+const { hub, meta } = solutions as SolutionsContent
+
+export function generateMetadata({ params }: { params: { locale: string } }) {
+  return buildMetadata({ locale: params.locale, path: '/solutions', title: meta.title, description: meta.description })
+}
 // Reuses forWho.cardCtaLabels rather than each segment's own ctaLabel: the same
 // navigation-vs-conversion mismatch marketing-critic caught on the homepage grid
 // (src/components/sections/ForWho.tsx) applies here too — segment.ctaLabel is
