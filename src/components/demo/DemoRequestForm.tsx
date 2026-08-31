@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, type FormEvent } from 'react'
+import React, { useRef, useState, type FormEvent } from 'react'
 import Input from '../ui/Input'
 import Textarea from '../ui/Textarea'
 import Button from '../ui/Button'
@@ -11,6 +11,8 @@ import {
   type DemoRequestInput
 } from '../../lib/validation/demoRequest'
 import type { DemoFormContent } from '../../lib/types/content-types'
+import { trackEvent } from '../../lib/analytics'
+import { getStoredUtm } from '../../lib/utm'
 
 type Status = 'idle' | 'submitting' | 'success' | 'error'
 
@@ -21,7 +23,8 @@ const emptyValues: DemoRequestInput = {
   mainNeed: '',
   email: '',
   phone: '',
-  website: ''
+  website: '',
+  utm: {}
 }
 
 export default function DemoRequestForm({ content }: { content: DemoFormContent }) {
@@ -29,8 +32,16 @@ export default function DemoRequestForm({ content }: { content: DemoFormContent 
   const [errors, setErrors] = useState<DemoRequestFieldErrors>({})
   const [status, setStatus] = useState<Status>('idle')
   const [formError, setFormError] = useState<string | null>(null)
+  const hasStartedRef = useRef(false)
 
   function updateField<K extends keyof DemoRequestInput>(field: K, value: string) {
+    // 'website' is the honeypot — a bot filling it shouldn't count as a real
+    // visitor starting the form (docs/specs/09-analytics-tracking.md's
+    // "Abandon" funnel step is about real prospects, not scripted traffic).
+    if (!hasStartedRef.current && field !== 'website') {
+      hasStartedRef.current = true
+      trackEvent('demo_form_start')
+    }
     setValues(prev => ({ ...prev, [field]: value }))
   }
 
@@ -49,7 +60,11 @@ export default function DemoRequestForm({ content }: { content: DemoFormContent 
       const response = await fetch('/api/demo-request', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(normalized)
+        // UTM travels with the visitor's own voluntary submission — the one
+        // real "inscription" action on this site today (docs/specs/
+        // 09-analytics-tracking.md: "l'attribution de campagne doit être
+        // transmise via UTM jusqu'à l'inscription").
+        body: JSON.stringify({ ...normalized, utm: getStoredUtm() })
       })
       const payload = await response.json().catch(() => null)
       if (!response.ok || !payload?.ok) {
@@ -58,6 +73,7 @@ export default function DemoRequestForm({ content }: { content: DemoFormContent 
         setFormError(content.errors.submitFailed)
         return
       }
+      trackEvent('demo_form_submit')
       setStatus('success')
     } catch {
       setStatus('error')

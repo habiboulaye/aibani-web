@@ -6,11 +6,13 @@ import type { PricingContent, TarifsContent, HomepageContent } from '../../../li
 import { ctaHref } from '../../../lib/pricing'
 import { localizeHref } from '../../../lib/i18n/localizeHref'
 import { buildMetadata } from '../../../lib/seo'
-import Button from '../../../components/ui/Button'
+import { tierEventName } from '../../../lib/analytics'
 import Badge from '../../../components/ui/Badge'
 import SocialProof from '../../../components/sections/SocialProof'
 import PractitionerCalculator from '../../../components/pricing/PractitionerCalculator'
 import FeatureComparisonTable from '../../../components/pricing/FeatureComparisonTable'
+import TrackedButton from '../../../components/analytics/TrackedButton'
+import ViewTracker from '../../../components/analytics/ViewTracker'
 
 const pricing = pricingContent as PricingContent
 const tarifs = tarifsContent as TarifsContent
@@ -122,29 +124,34 @@ export default function TarifsPage({ params }: { params: { locale: string } }) {
                   </ul>
                 </div>
                 <div className="mt-4 flex flex-col gap-2">
-                  <Button
+                  <TrackedButton
                     variant={tier.ctaStyle}
                     href={ctaHref(locale, tier.id)}
                     className="w-full"
                     aria-label={`${primaryLabel} — ${tier.name}, ${tier.priceLabel}`}
+                    eventName={tierEventName(tier.id)}
+                    eventProps={{ position: 'tarifs', label: primaryLabel, tier: tier.id }}
                   >
                     {primaryLabel}
-                  </Button>
+                  </TrackedButton>
                   {tierCta?.secondaryLabel && (
-                    <Button
+                    <TrackedButton
                       variant="tertiary"
                       href={localizeHref(locale, '/contact')}
                       className="w-full"
                       aria-label={`${tierCta.secondaryLabel} — ${tier.name}`}
+                      eventName="cta_talk_to_expert_click"
+                      eventProps={{ position: 'tarifs', label: tierCta.secondaryLabel, tier: tier.id }}
                     >
                       {tierCta.secondaryLabel}
-                    </Button>
+                    </TrackedButton>
                   )}
                   {tierCta?.followupNote && (
                     <div className="text-xs text-ink-900/70">{tierCta.followupNote}</div>
                   )}
                   {tier.microcopy && <div className="mt-1 text-xs text-ink-900/70">{tier.microcopy}</div>}
                 </div>
+                <ViewTracker eventName="pricing_tier_view" props={{ tier: tier.id, position: 'tarifs' }} />
               </article>
             )
           })}
@@ -179,9 +186,14 @@ export default function TarifsPage({ params }: { params: { locale: string } }) {
         <h2 className="font-display text-2xl font-semibold text-ink-900">{finalCta.title}</h2>
         <p className="mt-2 text-ink-900/70">{finalCta.subtitle}</p>
         <div className="mt-6">
-          <Button variant="primary" href={localizeHref(locale, finalCta.ctaHref)}>
+          <TrackedButton
+            variant="primary"
+            href={localizeHref(locale, finalCta.ctaHref)}
+            eventName="cta_request_demo_click"
+            eventProps={{ position: 'final_cta', label: finalCta.ctaLabel }}
+          >
             {finalCta.ctaLabel}
-          </Button>
+          </TrackedButton>
         </div>
       </div>
     </div>

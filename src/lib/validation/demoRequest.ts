@@ -8,6 +8,10 @@ export type DemoRequestInput = {
   email: string
   phone: string
   website: string // honeypot — never validated, never logged if filled
+  // Campaign attribution (docs/specs/09-analytics-tracking.md) — captured
+  // client-side (src/lib/utm.ts) from the visitor's first landing URL,
+  // passed through unvalidated (it's metadata, not a form field).
+  utm: Record<string, string>
 }
 
 export type DemoRequestFieldErrors = Partial<{
@@ -25,6 +29,19 @@ function toStr(v: unknown): string {
 
 // Coerces an unknown/untrusted body (client fetch payload or a raw request
 // body) into a fully-typed, string-only shape — never trusts input types.
+function toUtm(v: unknown): Record<string, string> {
+  if (!v || typeof v !== 'object') {
+    return {}
+  }
+  const result: Record<string, string> = {}
+  for (const [key, value] of Object.entries(v as Record<string, unknown>)) {
+    if (typeof value === 'string' && value) {
+      result[key] = value
+    }
+  }
+  return result
+}
+
 export function normalizeDemoRequest(body: unknown): DemoRequestInput {
   const b = (body && typeof body === 'object' ? body : {}) as Record<string, unknown>
   return {
@@ -34,7 +51,8 @@ export function normalizeDemoRequest(body: unknown): DemoRequestInput {
     mainNeed: toStr(b.mainNeed).trim(),
     email: toStr(b.email).trim(),
     phone: toStr(b.phone).trim(),
-    website: toStr(b.website)
+    website: toStr(b.website),
+    utm: toUtm(b.utm)
   }
 }
 

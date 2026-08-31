@@ -40,6 +40,7 @@ export async function POST(request: Request) {
     mainNeed: input.mainNeed,
     email: input.email,
     phone: input.phone,
+    utm: input.utm,
     receivedAt: new Date().toISOString()
   })
 
