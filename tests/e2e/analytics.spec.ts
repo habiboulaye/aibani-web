@@ -34,4 +34,13 @@ test.describe('consent banner', () => {
     await page.getByRole('link', { name: /Créer mon établissement/, exact: false }).first().click()
     await expect(page).toHaveURL(/\/fr\/tarifs/)
   })
+
+  test('withdrawing consent via the footer control re-shows the banner', async ({ page }) => {
+    await page.goto('/fr')
+    await page.getByRole('button', { name: content.acceptLabel, exact: true }).click()
+    await expect(page.getByText(content.message)).toHaveCount(0)
+
+    await page.getByRole('button', { name: content.manageLabel, exact: true }).click()
+    await expect(page.getByText(content.message)).toBeVisible()
+  })
 })

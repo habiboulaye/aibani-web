@@ -331,6 +331,7 @@ export type ConsentContent = {
   message: string
   acceptLabel: string
   refuseLabel: string
+  manageLabel: string
 }
 
 export type TarifsContent = {

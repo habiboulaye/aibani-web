@@ -3,7 +3,7 @@ import { render, screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import ConsentBanner from '../../../src/components/analytics/ConsentBanner'
 import consentContent from '../../../content/consent.json'
-import { getConsent } from '../../../src/lib/consent'
+import { getConsent, resetConsent } from '../../../src/lib/consent'
 import type { ConsentContent } from '../../../src/lib/types/content-types'
 
 const content = consentContent as ConsentContent
@@ -40,5 +40,15 @@ describe('ConsentBanner', () => {
     window.localStorage.setItem('aibani:consent', 'accepted')
     render(<ConsentBanner />)
     await waitFor(() => expect(screen.queryByText(content.message)).not.toBeInTheDocument())
+  })
+
+  it('reappears when consent is withdrawn elsewhere (Footer\'s "manage preferences" control)', async () => {
+    window.localStorage.setItem('aibani:consent', 'accepted')
+    render(<ConsentBanner />)
+    await waitFor(() => expect(screen.queryByText(content.message)).not.toBeInTheDocument())
+
+    resetConsent()
+
+    expect(await screen.findByText(content.message)).toBeInTheDocument()
   })
 })

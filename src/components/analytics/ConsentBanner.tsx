@@ -3,16 +3,29 @@
 import React, { useEffect, useState } from 'react'
 import consentContent from '../../../content/consent.json'
 import type { ConsentContent } from '../../lib/types/content-types'
-import { getConsent, setConsent, type ConsentStatus } from '../../lib/consent'
+import { getConsent, setConsent, CONSENT_CHANGED_EVENT, type ConsentStatus } from '../../lib/consent'
 import Button from '../ui/Button'
 
 const content = consentContent as ConsentContent
 
 export default function ConsentBanner() {
+  // Starts as 'accepted' (a placeholder, not a real value) purely so the
+  // very first server-rendered/pre-hydration paint matches: both render
+  // null, avoiding a flash of the banner before localStorage can be read
+  // client-side in the effect below. The real value only exists after that
+  // effect runs.
   const [status, setStatus] = useState<ConsentStatus | null>('accepted')
 
   useEffect(() => {
     setStatus(getConsent())
+    // Reacts to consent being withdrawn elsewhere (Footer's "Gérer mes
+    // préférences" link, src/lib/consent.ts#resetConsent) by reappearing —
+    // withdrawing consent must be as easy as giving it.
+    function onConsentChanged(event: Event) {
+      setStatus((event as CustomEvent<ConsentStatus | null>).detail)
+    }
+    window.addEventListener(CONSENT_CHANGED_EVENT, onConsentChanged)
+    return () => window.removeEventListener(CONSENT_CHANGED_EVENT, onConsentChanged)
   }, [])
 
   if (status !== null) {
