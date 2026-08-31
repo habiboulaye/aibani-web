@@ -156,6 +156,18 @@ export type HomepageContent = {
     ctaLabel: string
     ctaHref: string
   }
+  security: {
+    title: string
+    intro: string
+    hostingLabel: string
+    hosting: string
+    complianceLabel: string
+    compliance: string
+    commitmentsIntro: string
+    commitments: string[]
+    ctaLabel: string
+    ctaHref: string
+  }
   finalCta: {
     title: string
     subtitle: string
@@ -198,6 +210,7 @@ export type FaqItem = {
 }
 
 export type FaqContent = {
+  title: string
   items: FaqItem[]
 }
 

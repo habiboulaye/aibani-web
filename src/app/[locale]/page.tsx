@@ -6,8 +6,10 @@ import Solution from '../../components/sections/Solution'
 import ForWho from '../../components/sections/ForWho'
 import Features from '../../components/sections/Features'
 import PatientNetwork from '../../components/sections/PatientNetwork'
-import Testimonials from '../../components/sections/Testimonials'
 import Pricing from '../../components/sections/Pricing'
+import Security from '../../components/sections/Security'
+import Testimonials from '../../components/sections/Testimonials'
+import Faq from '../../components/sections/Faq'
 import CTA from '../../components/sections/CTA'
 
 export default function Home({ params }: { params: { locale: string } }) {
@@ -21,8 +23,10 @@ export default function Home({ params }: { params: { locale: string } }) {
       <ForWho locale={locale} />
       <Features />
       <PatientNetwork locale={locale} />
-      <Testimonials />
       <Pricing locale={locale} />
+      <Security locale={locale} />
+      <Testimonials />
+      <Faq />
       <CTA locale={locale} />
     </>
   )
