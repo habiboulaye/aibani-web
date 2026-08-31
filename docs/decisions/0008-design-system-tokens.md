@@ -43,3 +43,16 @@ Composants livrés : `Button` (primary/secondary/tertiary/accent, avec états lo
 - `ember-600` et `ember-700` ne sont pas interchangeables : toute réutilisation doit respecter la distinction fill-hover vs anneau/texte, documentée en commentaire dans `tailwind.config.cjs` et `src/styles/tokens.ts`.
 - La police change immédiatement sur tout le site (Inter/Outfit via `next/font/google` dans `src/app/layout.tsx`), contrairement au reste de cette phase qui n'est visible que sur `/design-system`.
 - Si `Outfit` ne convient pas visuellement après revue humaine sur `/design-system`, le remplacer reste un changement à un seul endroit (`layout.tsx` + `tailwind.config.cjs`), pas une refonte.
+
+## Addendum du 2026-08-31 — logo AiBani vs palette lagoon/ember
+
+Le logo AiBani fourni (`public/images/aibani-logo.jpeg`, ajouté dans `src/components/layout/Header.tsx`/`Footer.tsx`) utilise un bleu et un vert nettement différents des tokens `lagoon`/`ember` de cette ADR.
+
+Décision : **garder les deux séparés** — le logo reste la marque telle quelle, la palette `lagoon`/`ember` reste l'habillage UI (boutons, fonds, focus rings). Ne pas retoucher la palette pour la faire correspondre au logo.
+
+Raisons :
+- La palette actuelle est déjà vérifiée AA/WCAG token par token (voir tableau ci-dessus) et appliquée de façon cohérente sur l'intégralité de la Phase 3 (Batches 1-4, homepage complète) — la refaire correspondre au logo demanderait de re-dériver et re-vérifier chaque paire de contraste, et de retoucher chaque section déjà revue par marketing-critic/compliance-reviewer.
+- Une marque (logo) avec des couleurs distinctes de la palette d'interface est une pratique courante, pas une incohérence — beaucoup de produits séparent identité de marque et habillage produit.
+- Le fichier logo fourni (JPEG, fond blanc plein, pas de transparence) a les caractéristiques d'un asset de travail plutôt que d'une livraison de marque finalisée — probable qu'il soit retravaillé (vectorisé, fond transparent) avant une mise en production réelle, ce qui rend une réconciliation de palette prématurée à ce stade.
+
+Si une refonte de palette alignée sur le logo est souhaitée plus tard, elle doit passer par sa propre revue humaine explicite (même exigence que cette ADR) — pas un ajustement silencieux.
