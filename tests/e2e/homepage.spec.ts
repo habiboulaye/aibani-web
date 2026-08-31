@@ -13,7 +13,10 @@ test.describe('homepage — hero to CTA journey', () => {
   test('renders every confirmed stat and hides unconfirmed ones', async ({ page }) => {
     await page.goto('/')
     for (const stat of stats.stats.filter(s => s.confirmed && s.value !== null)) {
-      await expect(page.getByText(stat.label)).toBeVisible()
+      // exact: true — some stat labels (e.g. "Pharmacies connectées au réseau") are
+      // now also a substring of unrelated prose elsewhere on the page (ForWho's
+      // pharmacie card), which non-exact getByText would ambiguously match too.
+      await expect(page.getByText(stat.label, { exact: true })).toBeVisible()
     }
     for (const stat of stats.stats.filter(s => !s.confirmed)) {
       await expect(page.getByText(stat.label)).toHaveCount(0)
