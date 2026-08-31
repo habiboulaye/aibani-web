@@ -9,16 +9,23 @@ export function absoluteUrl(path: string): string {
   return `${SITE_URL}${path.startsWith('/') ? path : `/${path}`}`
 }
 
+// A locale-prefixed route's real served path — '/' collapses to '' so the
+// homepage produces "/fr" (what Next actually serves, trailingSlash: false
+// by default), not "/fr/", matching the same '/' special-case sitemap.ts
+// already uses. Every locale-aware URL builder below goes through this one
+// function so the homepage can't drift out of sync again.
+function localizedPath(locale: string, path: string): string {
+  const normalizedPath = path === '/' ? '' : path.startsWith('/') ? path : `/${path}`
+  return `/${locale}${normalizedPath}`
+}
+
 // hreflang + canonical for a locale-prefixed route. routing.locales is the
 // single source of active locales (fr/en today) — this never needs to list
 // ar/es itself; it just follows whatever that array says.
 export function buildAlternates(locale: string, path: string) {
-  const normalizedPath = path.startsWith('/') ? path : `/${path}`
-  const languages = Object.fromEntries(
-    routing.locales.map(l => [l, absoluteUrl(`/${l}${normalizedPath}`)])
-  )
+  const languages = Object.fromEntries(routing.locales.map(l => [l, absoluteUrl(localizedPath(l, path))]))
   return {
-    canonical: absoluteUrl(`/${locale}${normalizedPath}`),
+    canonical: absoluteUrl(localizedPath(locale, path)),
     languages
   }
 }
@@ -48,7 +55,7 @@ export function buildMetadata({
     openGraph: {
       title,
       description,
-      url: absoluteUrl(`/${locale}${path.startsWith('/') ? path : `/${path}`}`),
+      url: absoluteUrl(localizedPath(locale, path)),
       siteName: 'AiBani',
       locale,
       type: 'website' as const

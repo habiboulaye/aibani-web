@@ -14,6 +14,7 @@
 8. **Gratuit perçu comme suffisant** : le plan gratuit est généreux (nécessaire pour l'effet réseau), donc la différenciation payant/gratuit doit rester extrêmement lisible sur `/tarifs`, sous peine de plafonner la conversion.
 9. **Décisions de pricing encore hypothèses de test**, pas des tarifs figés — désormais mieux informées par un benchmark de marché réel (`docs/decisions/0003-pricing-benchmarked-tiers.md`), mais toujours à valider par des tests commerciaux réels. Le contenu doit porter une nuance ("à partir de") cohérente avec ce statut.
 10. **280+ pharmacies "connectées" pourrait être mal compris** comme "clients payants du module de gestion pharmacie" alors qu'il s'agit de présence réseau gratuite — la formulation dans `content/segments/pharmacie.json` distingue explicitement les deux ; vigilance à maintenir sur toute réutilisation de ce chiffre ailleurs sur le site.
+13. **`hreflang="en"` pointe aujourd'hui vers du contenu français dupliqué** — soulevé par l'agent `seo-reviewer` en Phase 6 : `content/*.json` n'a pas encore de variante anglaise (décision n°10 ci-dessous), donc `/en/*` sert le même texte français que `/fr/*`. Les balises hreflang fr/en (`07-seo-strategy.md`) sont désormais actives dès la Phase 6, alors que le contenu anglais réel n'existe pas encore — c'est exactement le risque de "contenu dupliqué" que ce même document met en garde. Pas corrigé unilatéralement (le spec demande explicitement hreflang fr/en "dès le lancement") : à trancher — traduire réellement le contenu anglais avant la mise en production, ou retirer `en` du hreflang tant que ce n'est pas fait.
 
 ## Décisions tranchées
 
@@ -38,5 +39,6 @@
 1. **Confirmer la disponibilité effective de `aibani.health`** chez un registrar avant de s'engager (cf. décision n°9).
 2. **Confirmation juridique du statut exact de l'agrément APDP** (tacite ou non) avant d'utiliser une formulation plus forte que "dossier déposé avec accusé de réception" (cf. décision n°3, `08-security-compliance.md`).
 3. **Fichier vidéo `/demo`** (risque n°7) et **service email/CRM pour le formulaire `/demo`** (risque n°11) — les deux bloquent uniquement le lancement public de `/demo`, pas le reste du site.
+4. **`hreflang="en"` vs contenu anglais réel** (risque n°13) — traduire `content/*.json` pour l'anglais, ou retirer `en` des balises hreflang tant que ce n'est pas fait. Ne bloque pas la Phase 6 elle-même (le hreflang est actif conformément au spec), mais doit être tranché avant mise en production.
 
 Ce document reste vivant : toute nouvelle question ouverte pendant l'implémentation (Claude Code ou vous) doit y être ajoutée, pas laissée implicite dans une conversation.

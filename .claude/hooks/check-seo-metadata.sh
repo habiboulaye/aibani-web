@@ -18,7 +18,7 @@ FOUND=0
 PAGES=$(find src/app -type f -name 'page.tsx' -not -path '*/api/*' -not -path '*/design-system/*')
 
 for f in $PAGES; do
-  if ! grep -qE 'export (const metadata|function generateMetadata|async function generateMetadata)' "$f"; then
+  if ! grep -qE 'export (const metadata|(async )?function generateMetadata|const generateMetadata)' "$f"; then
     echo "❌ Aucune metadata (title/description) exportée dans $f"
     FOUND=1
     continue
