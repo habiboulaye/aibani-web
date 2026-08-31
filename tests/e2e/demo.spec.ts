@@ -8,10 +8,13 @@ test.describe('demo request form', () => {
   test('fills and submits the real form, shows the success message', async ({ page }) => {
     await page.goto('/fr/demo')
 
-    await page.getByLabel(form.fields.name.label).fill('Habiboulaye')
-    await page.getByLabel(form.fields.establishment.label).fill('Cabinet Test')
-    await page.getByLabel(form.fields.size.label).fill('3 praticiens')
-    await page.getByLabel(form.fields.email.label).fill('test@example.com')
+    // exact: true — "Établissement" is otherwise a case-insensitive substring
+    // match inside "Taille de l'établissement", the same class of ambiguity
+    // already hit once this project (tests/e2e/homepage.spec.ts's stat labels).
+    await page.getByLabel(form.fields.name.label, { exact: true }).fill('Habiboulaye')
+    await page.getByLabel(form.fields.establishment.label, { exact: true }).fill('Cabinet Test')
+    await page.getByLabel(form.fields.size.label, { exact: true }).fill('3 praticiens')
+    await page.getByLabel(form.fields.email.label, { exact: true }).fill('test@example.com')
     await page.getByRole('button', { name: form.submitLabel }).click()
 
     await expect(page.getByRole('status')).toHaveText(form.successMessage)
