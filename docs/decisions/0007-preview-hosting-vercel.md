@@ -1,7 +1,7 @@
 # ADR-0007 — Hébergement des previews PR : Vercel
 
 - **Date** : 2026-08-30
-- **Statut** : accepté
+- **Statut** : remplacé par ADR-0013 (2026-08-31 — le compte d'hébergement de preview réellement disponible côté utilisateur est Netlify, pas Vercel ; voir ADR-0013 pour la décision à jour et la correction du raisonnement ci-dessous sur le niveau de configuration réellement requis par Netlify)
 - **Décideurs** : Habiboulaye <habiboulaye@gmail.com>
 
 ## Contexte
