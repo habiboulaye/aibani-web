@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image'
 import navigation from '../../../content/navigation.json'
 import type { NavigationContent } from '../../lib/types/content-types'
 import { localizeHref } from '../../lib/i18n/localizeHref'
@@ -38,7 +39,8 @@ export default function Footer({ locale }: { locale: string }) {
               </a>
             ))}
         </div>
-        <div className="mt-6 pt-6 border-t border-mist-200 text-sm text-ink-900/70">
+        <div className="mt-6 pt-6 border-t border-mist-200 flex items-center gap-2 text-sm text-ink-900/70">
+          <Image src="/images/aibani-logo.jpeg" alt="AiBani" width={20} height={18} className="rounded-control" />
           © {new Date().getFullYear()} AiBani — Tous droits réservés
         </div>
       </div>

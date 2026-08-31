@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image'
 import navigation from '../../../content/navigation.json'
 import type { NavigationContent, NavDropdown } from '../../lib/types/content-types'
 import { localizeHref } from '../../lib/i18n/localizeHref'
@@ -15,7 +16,9 @@ export default function Header({ locale }: { locale: string }) {
   return (
     <header className="w-full border-b border-mist-200 bg-white">
       <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-        <Link href="/" className="font-display text-lg font-semibold text-ink-900">AiBani</Link>
+        <Link href="/" aria-label="AiBani — accueil">
+          <Image src="/images/aibani-logo.jpeg" alt="AiBani" width={44} height={39} className="rounded-control" priority />
+        </Link>
         <nav className="flex items-center gap-4">
           {nav.primary.map(item =>
             isDropdown(item) ? (
