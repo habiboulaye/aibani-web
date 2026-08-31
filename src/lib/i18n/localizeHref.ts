@@ -8,5 +8,9 @@ export function localizeHref(locale: string, href: string): string {
   if (isAbsoluteOrSpecialScheme || href.startsWith('#')) {
     return href
   }
-  return `/${locale}${href.startsWith('/') ? href : `/${href}`}`
+  // '/' collapses to '' so the homepage produces "/fr", not "/fr/" — Next's
+  // default trailingSlash: false means that's the actually-served URL (same
+  // fix already applied to src/lib/seo.ts's localizedPath for the same reason).
+  const normalizedHref = href === '/' ? '' : href.startsWith('/') ? href : `/${href}`
+  return `/${locale}${normalizedHref}`
 }

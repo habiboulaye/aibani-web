@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test'
+import AxeBuilder from '@axe-core/playwright'
 import pricing from '../../content/pricing.json'
 import tarifs from '../../content/tarifs.json'
 import type { PricingContent, TarifsContent } from '../../src/lib/types/content-types'
@@ -59,5 +60,12 @@ test.describe('/tarifs', () => {
     const secondaryCta = page.locator('#cabinet').getByRole('link', { name: new RegExp(secondaryLabel) })
     await expect(secondaryCta).toBeVisible()
     await expect(secondaryCta).toHaveAttribute('href', '/fr/contact')
+  })
+
+  test('has no serious or critical accessibility violations', async ({ page }) => {
+    await page.goto('/fr/tarifs')
+    const results = await new AxeBuilder({ page }).analyze()
+    const blocking = results.violations.filter(v => v.impact === 'serious' || v.impact === 'critical')
+    expect(blocking, JSON.stringify(blocking, null, 2)).toEqual([])
   })
 })

@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test'
+import AxeBuilder from '@axe-core/playwright'
 import consentContent from '../../content/consent.json'
 import type { ConsentContent } from '../../src/lib/types/content-types'
 
@@ -42,5 +43,13 @@ test.describe('consent banner', () => {
 
     await page.getByRole('button', { name: content.manageLabel, exact: true }).click()
     await expect(page.getByText(content.message)).toBeVisible()
+  })
+
+  test('has no serious or critical accessibility violations while visible', async ({ page }) => {
+    await page.goto('/fr')
+    await expect(page.getByText(content.message)).toBeVisible()
+    const results = await new AxeBuilder({ page }).analyze()
+    const blocking = results.violations.filter(v => v.impact === 'serious' || v.impact === 'critical')
+    expect(blocking, JSON.stringify(blocking, null, 2)).toEqual([])
   })
 })
