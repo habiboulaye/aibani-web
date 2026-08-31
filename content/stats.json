@@ -28,7 +28,7 @@
       "suffix": null,
       "label": "Pays où l'application est disponible au téléchargement",
       "confirmed": true,
-      "displayNote": "Portée de l'application (téléchargement), pas de réseau d'établissements actif hors Bénin — ne pas présenter comme une preuve d'activité commerciale multi-pays. Voir docs/specs/02-business-model.md, phase d'expansion."
+      "displayNote": "Application disponible au téléchargement — présence commerciale active au Bénin uniquement."
     },
     {
       "id": "active-professionals",
