@@ -108,6 +108,11 @@ export type ParcoursStep = {
   action: string
 }
 
+export type NetworkStep = {
+  title: string
+  detail: string
+}
+
 export type HomepageContent = {
   hero: {
     title: string
@@ -131,9 +136,25 @@ export type HomepageContent = {
     ctaLabel: string
     ctaHref: string
   }
+  forWho: {
+    title: string
+    // Keyed by Segment.id — distinct from Segment.ctaLabel, which is written for
+    // that segment's own future /solutions/[slug] hero and can read as a
+    // conversion promise (e.g. "Rejoindre le réseau gratuitement"). These are
+    // navigation-only labels for the homepage teaser grid, verbatim from
+    // docs/source-material/homepage-content-v1-recommandee.md §6.
+    cardCtaLabels: Record<string, string>
+  }
   features: {
     title: string
     items: HomepageFeatureItem[]
+  }
+  patientNetwork: {
+    title: string
+    text: string
+    steps: NetworkStep[]
+    ctaLabel: string
+    ctaHref: string
   }
   finalCta: {
     title: string

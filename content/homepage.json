@@ -1,5 +1,5 @@
 {
-  "_note": "hero/features/finalCta restent une extraction mécanique du texte précédemment codé en dur — pas encore alignés sur docs/source-material/homepage-content-v1-recommandee.md (reste un travail de Phase 3 à part entière). problem/solution, ajoutés en Batch 2, sont eux verbatim depuis ce document (§2/§3), revus par marketing-critic + compliance-reviewer le 2026-08-31.",
+  "_note": "hero/features/finalCta restent une extraction mécanique du texte précédemment codé en dur — pas encore alignés sur docs/source-material/homepage-content-v1-recommandee.md (reste un travail de Phase 3 à part entière). problem/solution (Batch 2) et forWho/patientNetwork (Batch 3) sont eux verbatim depuis ce document (§2/§3/§6/§4), revus par marketing-critic + compliance-reviewer.",
   "hero": {
     "title": "Simplifier la gestion de soins",
     "subtitle": "AiBani aide les professionnels et établissements à mieux suivre leurs patients et optimiser les parcours."
@@ -42,12 +42,33 @@
     "ctaLabel": "Voir comment fonctionne AiBani",
     "ctaHref": "/fonctionnalites"
   },
+  "forWho": {
+    "title": "Quel que soit votre établissement, AiBani s'adapte à votre activité.",
+    "cardCtaLabels": {
+      "cabinet": "Solution pour cabinet →",
+      "clinique": "Solution pour clinique →",
+      "laboratoire": "Solution pour laboratoire →",
+      "pharmacie": "Solution pour pharmacie →",
+      "etablissement": "Parler à un expert →"
+    }
+  },
   "features": {
     "title": "Fonctionnalités clés",
     "items": [
       { "id": "f1", "title": "Agenda & RDV", "description": "Gérez facilement les rendez-vous et disponibilités." },
       { "id": "f2", "title": "Dossiers patients", "description": "Accédez aux informations cliniques centralisées.", "availabilityNote": "selon l'offre (à partir de Cabinet)" }
     ]
+  },
+  "patientNetwork": {
+    "title": "Les rendez-vous sont gratuits. La gestion professionnelle, à votre rythme.",
+    "text": "Nous voulons d'abord vous aider à attirer et organiser vos patients. C'est pourquoi la présence de votre établissement et la prise de rendez-vous sur AiBani sont gratuites. Lorsque vous êtes prêt à aller plus loin, activez les fonctionnalités professionnelles dont votre établissement a besoin.",
+    "steps": [
+      { "title": "Créez votre établissement", "detail": "Gratuitement." },
+      { "title": "Recevez des rendez-vous", "detail": "Depuis le réseau AiBani." },
+      { "title": "Faites grandir votre activité", "detail": "Avec les outils de gestion professionnels." }
+    ],
+    "ctaLabel": "Découvrir l'offre gratuite AiBani Connect",
+    "ctaHref": "/tarifs#connect"
   },
   "finalCta": {
     "title": "Prêt à optimiser vos parcours patients ?",
