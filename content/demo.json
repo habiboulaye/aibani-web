@@ -1,0 +1,32 @@
+{
+  "_note": "Vidéo produit non incluse — fichier non fourni (docs/specs/13-risks-and-open-questions.md #6, docs/specs/04-content-pages.md /demo). Cette page ne présente que le formulaire de demande, en attendant. email/phone ajoutés au-delà du gabarit du doc source (nom, établissement, taille, besoin principal) — voir docs/decisions/0010-demo-form-scope-and-stub-backend.md.",
+  "hero": {
+    "title": "Demandez une démonstration personnalisée",
+    "subtitle": "Notre équipe vous présente AiBani adapté à votre établissement, sans engagement."
+  },
+  "form": {
+    "fields": {
+      "name": { "label": "Nom" },
+      "establishment": { "label": "Établissement" },
+      "size": { "label": "Taille de l'établissement", "hint": "Ex. nombre de praticiens ou de services" },
+      "mainNeed": { "label": "Besoin principal", "hint": "Facultatif" },
+      "email": { "label": "Email professionnel" },
+      "phone": { "label": "Téléphone", "hint": "Facultatif" }
+    },
+    "honeypotLabel": "Site web",
+    "submitLabel": "Envoyer ma demande",
+    "submittingLabel": "Envoi en cours…",
+    "successMessage": "Votre demande a bien été enregistrée.",
+    "privacyNote": "Ces informations sont utilisées uniquement pour répondre à votre demande de démonstration.",
+    "errors": {
+      "nameRequired": "Merci d'indiquer votre nom.",
+      "establishmentRequired": "Merci d'indiquer votre établissement.",
+      "sizeRequired": "Merci d'indiquer la taille de votre établissement.",
+      "emailRequired": "Merci d'indiquer votre email.",
+      "emailInvalid": "Cet email ne semble pas valide.",
+      "malformed": "La demande n'a pas pu être traitée. Merci de réessayer.",
+      "submitFailed": "L'envoi a échoué. Merci de vérifier les champs et réessayer.",
+      "networkFailed": "Impossible de contacter le serveur. Merci de réessayer."
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "title": "Trouvez un professionnel de santé. Prenez rendez-vous gratuitement.",
+  "subtitle": "Trouvez un centre de santé ou une pharmacie près de chez vous, et prenez rendez-vous sans appeler — c'est gratuit.",
+  "howItWorksTitle": "Comment ça marche",
+  "steps": [
+    { "title": "Recherchez", "detail": "Trouvez un professionnel ou un établissement du réseau AiBani." },
+    { "title": "Prenez rendez-vous", "detail": "Choisissez un créneau disponible, gratuitement." },
+    { "title": "Recevez un rappel", "detail": "Un rappel avant votre rendez-vous pour ne rien manquer." },
+    { "title": "Suivez votre parcours", "detail": "Retrouvez l'historique de vos rendez-vous dans l'application." }
+  ],
+  "downloadCtaLabel": "Télécharger l'application",
+  "appStoreLabel": "App Store",
+  "appStoreUrl": "https://apps.apple.com/fr/app/aibani/id6748284803",
+  "playStoreLabel": "Google Play",
+  "playStoreUrl": "https://play.google.com/store/apps/details?id=com.app.aibani&hl=en",
+  "findProfessionalCtaLabel": "Trouver un professionnel",
+  "findProfessionalHref": "https://app.myaibani.com",
+  "proGatewayText": "Vous êtes un professionnel de santé ou dirigez un établissement ?",
+  "proGatewayCtaLabel": "Découvrir les solutions AiBani"
+}
