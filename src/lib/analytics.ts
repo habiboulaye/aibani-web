@@ -18,12 +18,6 @@ export type AnalyticsEventName =
   | 'demo_form_start'
   | 'demo_form_submit'
 
-// Three independent silent no-op gates: no consent, no configured domain (so
-// PlausibleScript never injected the script), or the script tag hasn't
-// finished loading yet all resolve to "don't send anything" — matching
-// 09-analytics-tracking.md's "bannière de consentement avant activation de
-// tout script de mesure non essentiel" literally, not just for the script
-// itself but for every event it would carry.
 // Buckets a pricing tier's CTA by intent, not by its current href — every
 // tier technically routes to /demo or /contact today (no self-serve signup
 // exists yet), which is a temporary technical fact, not the business
@@ -56,6 +50,12 @@ export function segmentEventName(segmentId: string): AnalyticsEventName {
   return 'cta_request_demo_click'
 }
 
+// Three independent silent no-op gates: no consent, no configured domain (so
+// PlausibleScript never injected the script), or the script tag hasn't
+// finished loading yet all resolve to "don't send anything" — matching
+// 09-analytics-tracking.md's "bannière de consentement avant activation de
+// tout script de mesure non essentiel" literally, not just for the script
+// itself but for every event it would carry.
 export function trackEvent(name: AnalyticsEventName, props?: Record<string, string>): void {
   if (typeof window === 'undefined') {
     return
@@ -64,4 +64,35 @@ export function trackEvent(name: AnalyticsEventName, props?: Record<string, stri
     return
   }
   window.plausible?.(name, props ? { props } : undefined)
+}
+
+// Plain data-* attributes, not JSX — safe to spread from a Server Component
+// onto any element. AnalyticsObserver.tsx (the one real 'use client'
+// component doing the work, mounted once in src/app/[locale]/layout.tsx)
+// reads these back off the DOM: one delegated click listener + one
+// IntersectionObserver + one pageview scan handle every tracked element on
+// the page, instead of each element being its own hydrated client component
+// (measured to meaningfully inflate Total Blocking Time — see
+// docs/decisions/0012-consolidate-analytics-tracking-for-performance.md).
+function trackedAttrs(
+  key: 'data-track-click' | 'data-track-event' | 'data-track-pageview',
+  eventName: AnalyticsEventName,
+  props?: Record<string, string>
+) {
+  return {
+    [key]: eventName,
+    ...(props ? { 'data-track-props': JSON.stringify(props) } : {})
+  }
+}
+
+export function trackedClickAttrs(eventName: AnalyticsEventName, props?: Record<string, string>) {
+  return trackedAttrs('data-track-click', eventName, props)
+}
+
+export function trackedViewAttrs(eventName: AnalyticsEventName, props?: Record<string, string>) {
+  return trackedAttrs('data-track-event', eventName, props)
+}
+
+export function trackedPageviewAttrs(eventName: AnalyticsEventName, props?: Record<string, string>) {
+  return trackedAttrs('data-track-pageview', eventName, props)
 }

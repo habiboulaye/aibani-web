@@ -5,10 +5,9 @@ import solutions from '../../../content/solutions.json'
 import type { Segment, PricingContent, TrustSignalsContent, SolutionsContent } from '../../lib/types/content-types'
 import { localizeHref } from '../../lib/i18n/localizeHref'
 import { absoluteUrl } from '../../lib/seo'
-import { segmentEventName } from '../../lib/analytics'
+import { segmentEventName, trackedClickAttrs } from '../../lib/analytics'
 import Card from '../ui/Card'
 import Button from '../ui/Button'
-import TrackedLink from '../analytics/TrackedLink'
 import PageViewEvent from '../analytics/PageViewEvent'
 
 const { tiers, features } = pricing as PricingContent
@@ -122,14 +121,17 @@ export default function SegmentTemplate({ segment, locale }: { segment: Segment;
 
       <section className="py-12 bg-lagoon-900 text-white">
         <div className="max-w-3xl mx-auto px-4 text-center">
-          <TrackedLink
+          <a
             href={localizeHref(locale, ctaHref(segment.id))}
             className="inline-block bg-white text-lagoon-900 px-6 py-3 rounded-control font-medium hover:bg-paper-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-            eventName={segmentEventName(segment.id)}
-            eventProps={{ position: 'segment_page', label: segment.ctaLabel, segment: segment.id }}
+            {...trackedClickAttrs(segmentEventName(segment.id), {
+              position: 'segment_page',
+              label: segment.ctaLabel,
+              segment: segment.id
+            })}
           >
             {segment.ctaLabel}
-          </TrackedLink>
+          </a>
         </div>
       </section>
       <PageViewEvent eventName="segment_page_view" props={{ segment: segment.id }} />

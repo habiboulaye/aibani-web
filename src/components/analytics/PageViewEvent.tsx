@@ -1,8 +1,8 @@
-'use client'
+import { trackedPageviewAttrs, type AnalyticsEventName } from '../../lib/analytics'
 
-import { useEffect } from 'react'
-import { trackEvent, type AnalyticsEventName } from '../../lib/analytics'
-
+// Plain server-rendered marker — AnalyticsObserver.tsx fires this on mount
+// and on every client-side route change. See ViewTracker.tsx / src/lib/
+// analytics.ts's trackedPageviewAttrs for why this isn't 'use client' anymore.
 export default function PageViewEvent({
   eventName,
   props
@@ -10,9 +10,5 @@ export default function PageViewEvent({
   eventName: AnalyticsEventName
   props?: Record<string, string>
 }) {
-  useEffect(() => {
-    trackEvent(eventName, props)
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [eventName])
-  return null
+  return <div aria-hidden="true" style={{ display: 'none' }} {...trackedPageviewAttrs(eventName, props)} />
 }

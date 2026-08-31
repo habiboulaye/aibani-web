@@ -2,10 +2,10 @@ import React from 'react'
 import pricing from '../../../content/pricing.json'
 import type { PricingContent } from '../../lib/types/content-types'
 import { ctaHref } from '../../lib/pricing'
-import { tierEventName } from '../../lib/analytics'
-import TrackedButton from '../analytics/TrackedButton'
+import { tierEventName, trackedClickAttrs } from '../../lib/analytics'
 import ViewTracker from '../analytics/ViewTracker'
 import Badge from '../ui/Badge'
+import Button from '../ui/Button'
 
 const { title, subtitle, patientNote, tiers, features } = pricing as PricingContent
 
@@ -57,16 +57,15 @@ export default function Pricing({ locale }: { locale: string }) {
                   </ul>
                 </div>
                 <div className="mt-4">
-                  <TrackedButton
+                  <Button
                     variant={t.ctaStyle}
                     href={ctaHref(locale, t.id)}
                     className="w-full"
                     aria-label={`${t.ctaLabel} — ${t.name}, ${t.priceLabel}`}
-                    eventName={tierEventName(t.id)}
-                    eventProps={{ position: 'pricing', label: t.ctaLabel, tier: t.id }}
+                    {...trackedClickAttrs(tierEventName(t.id), { position: 'pricing', label: t.ctaLabel, tier: t.id })}
                   >
                     {t.ctaLabel}
-                  </TrackedButton>
+                  </Button>
                   {t.microcopy && <div className="mt-2 text-xs text-ink-900/70">{t.microcopy}</div>}
                 </div>
                 <ViewTracker eventName="pricing_tier_view" props={{ tier: t.id, position: 'pricing' }} />

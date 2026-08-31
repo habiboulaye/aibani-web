@@ -26,3 +26,8 @@ yarn-error.log*
 
 # testing
 /coverage
+
+# Lighthouse CI (npx lhci autorun) — local run artifacts, never committed;
+# the performance CI job uploads lighthouse-reports/ as an artifact instead.
+/.lighthouseci
+/lighthouse-reports
