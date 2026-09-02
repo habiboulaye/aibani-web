@@ -1,0 +1,20 @@
+{
+  "_note": "Extraction mécanique du texte précédemment codé en dur dans Hero.tsx/Features.tsx/CTA.tsx — copie identique, pas une réécriture. Aligner ce contenu sur docs/source-material/homepage-content-v1-recommandee.md reste un travail de Phase 3 à part entière (voir aibani-brand-voice + marketing-critic).",
+  "hero": {
+    "title": "Simplifier la gestion de soins",
+    "subtitle": "AiBani aide les professionnels et établissements à mieux suivre leurs patients et optimiser les parcours."
+  },
+  "features": {
+    "title": "Fonctionnalités clés",
+    "items": [
+      { "id": "f1", "title": "Agenda & RDV", "description": "Gérez facilement les rendez-vous et disponibilités." },
+      { "id": "f2", "title": "Dossiers patients", "description": "Accédez aux informations cliniques centralisées.", "availabilityNote": "selon l'offre (à partir de Cabinet)" }
+    ]
+  },
+  "finalCta": {
+    "title": "Prêt à optimiser vos parcours patients ?",
+    "subtitle": "Demandez une démo ou inscrivez-vous pour un essai gratuit.",
+    "ctaLabel": "Demander une démo",
+    "ctaHref": "/demo"
+  }
+}

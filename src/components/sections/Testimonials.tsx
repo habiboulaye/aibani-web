@@ -1,20 +1,26 @@
 import React from 'react'
+import testimonialsContent from '../../../content/testimonials.json'
+import type { TestimonialsContent } from '../../lib/types/content-types'
 
-const mock = [
-  { id: 't1', quote: "AiBani a transformé notre suivi patient.", author: 'Dr. A.' },
-  { id: 't2', quote: "Interface simple et efficace.", author: 'Clinique B' }
-]
+const { title, testimonials } = testimonialsContent as TestimonialsContent
 
 export default function Testimonials() {
+  if (testimonials.length === 0) {
+    return null
+  }
+
   return (
     <section className="py-12 bg-white">
       <div className="max-w-4xl mx-auto px-4">
-        <h3 className="text-2xl font-semibold">Témoignages</h3>
+        <h2 className="text-2xl font-semibold">{title}</h2>
         <div className="mt-6 space-y-4">
-          {mock.map(t => (
+          {testimonials.map(t => (
             <blockquote key={t.id} className="p-4 border rounded-md">
               <p className="text-slate-700">“{t.quote}”</p>
-              <cite className="block mt-2 text-sm text-slate-500">— {t.author}</cite>
+              <cite className="block mt-2 text-sm text-slate-500">
+                — {t.author}
+                {t.role ? `, ${t.role}` : ''}
+              </cite>
             </blockquote>
           ))}
         </div>

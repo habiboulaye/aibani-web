@@ -1,19 +1,19 @@
 import React from 'react'
 import Hero from '../components/sections/Hero'
+import SocialProof from '../components/sections/SocialProof'
 import Features from '../components/sections/Features'
 import Testimonials from '../components/sections/Testimonials'
+import Pricing from '../components/sections/Pricing'
 import CTA from '../components/sections/CTA'
 
 export default function Home() {
   return (
     <>
       <Hero />
+      <SocialProof />
       <Features />
-      <main className="max-w-4xl mx-auto px-4 py-12">
-        <h3 className="text-xl font-semibold">Bienvenue sur AiBani</h3>
-        <p className="mt-3 text-slate-600">Prototype de la Phase 1 — continuer l'implémentation des sections.</p>
-      </main>
       <Testimonials />
+      <Pricing />
       <CTA />
     </>
   )
