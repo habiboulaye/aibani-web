@@ -1,6 +1,7 @@
 {
   "_note": "Prix et fonctionnalités par tier lus depuis content/pricing.json — ce fichier ne contient que le texte propre à la page /tarifs. Voir .claude/skills/aibani-pricing-sync/SKILL.md.",
   "title": "Un tarif clair pour chaque établissement",
+  "seoDescription": "Tarifs AiBani : de la présence gratuite sur le réseau au cabinet médical et à la clinique, en passant par les groupes d'établissements. Essai gratuit.",
   "intro": "Un tarif adapté à la taille de votre établissement — l'application patient reste gratuite dans tous les cas.",
   "socialProofIntro": "Déjà utilisé par des centres de santé et pharmacies partout au Bénin.",
   "comparisonTitle": "Comparatif complet",
@@ -13,12 +14,12 @@
   "modulesComingBadgeLabel": "Bientôt disponible",
   "tierCtas": {
     "connect": {
-      "followupNote": "Un conseiller vous accompagne pour démarrer, sous 24 h."
+      "followupNote": "Un conseiller vous accompagne pour démarrer."
     },
     "cabinet": {
       "primaryLabel": "Essayer gratuitement 30 jours",
       "secondaryLabel": "Parler à un expert",
-      "followupNote": "Un conseiller vous accompagne pour démarrer, sous 24 h."
+      "followupNote": "Un conseiller vous accompagne pour démarrer."
     },
     "clinic": {
       "primaryLabel": "Demander une démonstration"

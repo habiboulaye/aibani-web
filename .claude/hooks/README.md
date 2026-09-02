@@ -6,6 +6,7 @@ Ces scripts sont volontairement peu nombreux : seuls les contrôles qui doivent 
 |---|---|---|---|
 | `check-placeholders.sh` | Pré-commit | Bloque tout `XXX`, chiffre non confirmé, témoignage gabarit | Fort volontairement — c'est la règle la plus critique du projet |
 | `check-legal-claims.sh` | Pré-commit | Alerte sur toute mention de "certifi..." pour forcer une vérification humaine | Bloquant mais contournable en connaissance de cause (pas une regex qui peut juger la précision juridique elle-même) |
+| `check-seo-metadata.sh` | Pré-commit | Vérifie que chaque route a un title + description, et que sitemap.ts/robots.ts existent | Bloquant sur la présence uniquement — la qualité de rédaction reste le rôle de l'agent `seo-reviewer` |
 
 **Note attendue, pas un bug** : ce hook se déclenchera aussi sur la formulation ISO/IEC 27001 déjà validée dans `docs/specs/08-security-compliance.md` — c'est volontaire. Le hook ne sait pas distinguer une mention précise d'une mention vague ; il demande une confirmation explicite à chaque fois, y compris quand la formulation est déjà approuvée. Confirmer et poursuivre le commit dans ce cas.
 
@@ -19,7 +20,8 @@ Ces scripts sont volontairement peu nombreux : seuls les contrôles qui doivent 
         "matcher": "Bash(git commit*)",
         "hooks": [
           { "type": "command", "command": ".claude/hooks/check-placeholders.sh" },
-          { "type": "command", "command": ".claude/hooks/check-legal-claims.sh" }
+          { "type": "command", "command": ".claude/hooks/check-legal-claims.sh" },
+          { "type": "command", "command": ".claude/hooks/check-seo-metadata.sh" }
         ]
       }
     ]

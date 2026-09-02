@@ -3,6 +3,10 @@
     "title": "Une solution pour chaque type d'établissement",
     "intro": "AiBani s'adapte à l'activité de votre établissement — découvrez la solution pensée pour votre métier."
   },
+  "meta": {
+    "title": "Solutions AiBani par métier | Cabinet, clinique, laboratoire, pharmacie",
+    "description": "Découvrez la solution AiBani adaptée à votre établissement de santé : cabinet médical, clinique, laboratoire d'analyses, pharmacie ou groupe d'établissements."
+  },
   "painPointsLabel": "Les défis courants",
   "featuresLabel": "Fonctionnalités mises en avant",
   "recommendedTierLabel": "Offre recommandée",

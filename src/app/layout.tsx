@@ -1,10 +1,19 @@
 import './globals.css'
 import React from 'react'
 import { inter, outfit, jetbrainsMono } from '../lib/fonts'
+import { SITE_URL } from '../lib/seo'
 
+// True fallback only — every real page under [locale] sets its own metadata
+// (see src/lib/seo.ts). This is what a route with no metadata export would
+// show, which today is only /design-system (an internal tool, excluded from
+// the sitemap and disallowed in robots.txt).
+// metadataBase makes every page's relative OG/Twitter image URL (e.g. the
+// opengraph-image.tsx routes) resolve to a real absolute URL instead of
+// Next's http://localhost:3000 build-time fallback.
 export const metadata = {
+  metadataBase: new URL(SITE_URL),
   title: 'AiBani',
-  description: 'AiBani — HealthTech B2B2C'
+  description: 'AiBani — plateforme de gestion pour établissements de santé.'
 }
 
 // Single shared root layout — owns <html>/<body>, fonts, globals.css for every

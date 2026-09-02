@@ -19,7 +19,7 @@ Next.js (App Router) + TypeScript strict + Tailwind CSS. Contenu commercial dans
 - Une phase de `docs/specs/12-roadmap.md` = une session, en `plan mode`. Ne pas enchaîner plusieurs phases dans un seul tour.
 - Chaque décision de conception s'écrit dans `docs/decisions/` (format ADR, voir `docs/decisions/TEMPLATE.md`), pas seulement dans la réponse de chat.
 - Le contenu vit dans `content/*.json`, typé par `src/lib/types/`. Un composant de `src/components/sections/` ou `solutions/` ne contient jamais de texte en dur.
-- Avant de committer : lancer le hook `check-placeholders` et `check-legal-claims` (voir `.claude/hooks/`).
+- Avant de committer : lancer les hooks `check-placeholders`, `check-legal-claims` et `check-seo-metadata` (voir `.claude/hooks/`).
 
 ## Definition of Done (par section/page)
 Voir `docs/specs/10-testing-qa-cicd.md`. Résumé : contenu depuis `content/*`, aucun placeholder, typecheck + lint OK, tests E2E du parcours concerné OK, contrôle d'accessibilité sans erreur bloquante, capture d'écran revue, Core Web Vitals dans les cibles.

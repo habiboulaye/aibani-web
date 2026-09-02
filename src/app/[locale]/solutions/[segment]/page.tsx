@@ -6,6 +6,7 @@ import laboratoire from '../../../../../content/segments/laboratoire.json'
 import pharmacie from '../../../../../content/segments/pharmacie.json'
 import etablissement from '../../../../../content/segments/etablissement.json'
 import type { Segment } from '../../../../lib/types/content-types'
+import { buildMetadata } from '../../../../lib/seo'
 import SegmentTemplate from '../../../../components/solutions/SegmentTemplate'
 
 const segments = [cabinet, clinique, laboratoire, pharmacie, etablissement] as Segment[]
@@ -14,9 +15,17 @@ export function generateStaticParams() {
   return segments.map(segment => ({ segment: segment.slug }))
 }
 
-export function generateMetadata({ params }: { params: { segment: string } }) {
+export function generateMetadata({ params }: { params: { locale: string; segment: string } }) {
   const segment = segments.find(s => s.slug === params.segment)
-  return { title: segment?.seoTitle }
+  if (!segment) {
+    return {}
+  }
+  return buildMetadata({
+    locale: params.locale,
+    path: `/solutions/${segment.slug}`,
+    title: segment.seoTitle,
+    description: segment.seoDescription
+  })
 }
 
 export default function SegmentPage({ params }: { params: { locale: string; segment: string } }) {

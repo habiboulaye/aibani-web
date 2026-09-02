@@ -2,12 +2,20 @@ import React from 'react'
 import patientsContent from '../../../../content/patients.json'
 import type { PatientsContent } from '../../../lib/types/content-types'
 import { localizeHref } from '../../../lib/i18n/localizeHref'
+import { buildMetadata } from '../../../lib/seo'
 import Card from '../../../components/ui/Card'
 import Button from '../../../components/ui/Button'
 
 const content = patientsContent as PatientsContent
 
-export const metadata = { title: content.title }
+export function generateMetadata({ params }: { params: { locale: string } }) {
+  return buildMetadata({
+    locale: params.locale,
+    path: '/patients',
+    title: content.title,
+    description: content.seoDescription
+  })
+}
 
 // Patient-facing page — no pricing/pro content per docs/specs/04-content-pages.md
 // ("Pas de mention de prix ni d'offres pro sur cette page").
