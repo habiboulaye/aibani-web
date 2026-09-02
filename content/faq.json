@@ -1,4 +1,5 @@
 {
+  "title": "Questions fréquentes",
   "items": [
     {
       "id": "free-appointments",
@@ -8,7 +9,7 @@
     {
       "id": "trial",
       "question": "Puis-je essayer AiBani avant de payer ?",
-      "answer": "Oui. Contactez notre équipe pour connaître les conditions d'essai et mettre en place votre établissement."
+      "answer": "Oui, l'offre Cabinet peut être essayée gratuitement avant de vous engager. Notre équipe vous accompagne pour la mise en place et convient avec vous des modalités adaptées à votre établissement."
     },
     {
       "id": "devices",

@@ -103,14 +103,70 @@ export type HomepageFeatureItem = {
   availabilityNote?: string
 }
 
+export type ParcoursStep = {
+  role: string
+  action: string
+}
+
+export type NetworkStep = {
+  title: string
+  detail: string
+}
+
 export type HomepageContent = {
   hero: {
     title: string
     subtitle: string
   }
+  problem: {
+    title: string
+    intro: string
+    conclusion: string
+    beforeLabel: string
+    afterLabel: string
+    before: string[]
+    after: string[]
+  }
+  solution: {
+    title: string
+    subtitle: string
+    steps: ParcoursStep[]
+    note: string
+    text: string
+    ctaLabel: string
+    ctaHref: string
+  }
+  forWho: {
+    title: string
+    // Keyed by Segment.id — distinct from Segment.ctaLabel, which is written for
+    // that segment's own future /solutions/[slug] hero and can read as a
+    // conversion promise (e.g. "Rejoindre le réseau gratuitement"). These are
+    // navigation-only labels for the homepage teaser grid, verbatim from
+    // docs/source-material/homepage-content-v1-recommandee.md §6.
+    cardCtaLabels: Record<string, string>
+  }
   features: {
     title: string
     items: HomepageFeatureItem[]
+  }
+  patientNetwork: {
+    title: string
+    text: string
+    steps: NetworkStep[]
+    ctaLabel: string
+    ctaHref: string
+  }
+  security: {
+    title: string
+    intro: string
+    hostingLabel: string
+    hosting: string
+    complianceLabel: string
+    compliance: string
+    commitmentsIntro: string
+    commitments: string[]
+    ctaLabel: string
+    ctaHref: string
   }
   finalCta: {
     title: string
@@ -154,6 +210,7 @@ export type FaqItem = {
 }
 
 export type FaqContent = {
+  title: string
   items: FaqItem[]
 }
 

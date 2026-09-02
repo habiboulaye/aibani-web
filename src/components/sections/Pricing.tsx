@@ -2,6 +2,8 @@ import React from 'react'
 import pricing from '../../../content/pricing.json'
 import type { PricingContent, PricingTier } from '../../lib/types/content-types'
 import { localizeHref } from '../../lib/i18n/localizeHref'
+import Button from '../ui/Button'
+import Badge from '../ui/Badge'
 
 const { title, subtitle, patientNote, tiers, features } = pricing as PricingContent
 
@@ -14,37 +16,44 @@ function ctaHref(locale: string, tier: PricingTier) {
 
 export default function Pricing({ locale }: { locale: string }) {
   return (
-    <section id="tarifs" className="py-12 bg-slate-50">
+    <section id="tarifs" className="py-12 bg-paper-50">
       <div className="max-w-4xl mx-auto px-4">
-        <h2 className="text-2xl font-semibold">{title}</h2>
-        {subtitle && (<p className="mt-2 text-slate-600">{subtitle}</p>)}
-        {patientNote && (<p className="mt-2 text-sm text-slate-600">{patientNote}</p>)}
+        <h2 className="font-display text-2xl font-semibold text-ink-900">{title}</h2>
+        {subtitle && (<p className="mt-2 text-ink-900/70">{subtitle}</p>)}
+        {patientNote && (<p className="mt-2 text-sm text-ink-900/70">{patientNote}</p>)}
 
         <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {tiers.map(t => {
             const included = t.includesTierId ? tiers.find(x => x.id === t.includesTierId) : undefined
             return (
-              <article key={t.id} id={t.id} aria-labelledby={`tier-${t.id}-name`} className="p-4 bg-white border border-gray-200 rounded-md flex flex-col shadow-sm">
+              <article
+                key={t.id}
+                id={t.id}
+                aria-labelledby={`tier-${t.id}-name`}
+                className="p-6 bg-white border border-mist-200 rounded-card shadow-card flex flex-col"
+              >
                 <div className="flex-1">
-                  <h3 id={`tier-${t.id}-name`} className="text-lg font-semibold text-slate-900">{t.name}</h3>
-                  <div className="mt-2 text-xl font-bold text-slate-900">{t.priceLabel}</div>
-                  {t.audienceBadge && (<div className="mt-2"><span className="inline-block bg-slate-100 text-xs text-slate-700 px-2 py-1 rounded">{t.audienceBadge}</span></div>)}
-                  {t.priceNote && <div className="mt-2 text-sm text-slate-700">{t.priceNote}</div>}
-                  <div className="mt-4 text-sm text-slate-800">{t.tagline}</div>
+                  <h3 id={`tier-${t.id}-name`} className="text-lg font-semibold text-ink-900">{t.name}</h3>
+                  <div className="mt-2 text-xl font-bold text-ink-900">{t.priceLabel}</div>
+                  {t.audienceBadge && (
+                    <div className="mt-2"><Badge variant="neutral">{t.audienceBadge}</Badge></div>
+                  )}
+                  {t.priceNote && <div className="mt-2 text-sm text-ink-900/70">{t.priceNote}</div>}
+                  <div className="mt-4 text-sm text-ink-900/70">{t.tagline}</div>
 
                   {included && (
-                    <div className="mt-4 text-sm font-medium text-slate-900">Tout {included.name}, plus :</div>
+                    <div className="mt-4 text-sm font-medium text-ink-900">Tout {included.name}, plus :</div>
                   )}
                   <ul className="mt-2 space-y-1">
                     {t.featureIds.map(featureId => {
                       const feature = features[featureId]
                       return (
-                        <li key={featureId} className="text-sm text-slate-700 flex gap-2">
+                        <li key={featureId} className="text-sm text-ink-900/70 flex gap-2">
                           <span aria-hidden="true">✓</span>
                           <span>
                             {feature.label}
                             {feature.availabilityNote && (
-                              <span className="text-slate-600"> ({feature.availabilityNote})</span>
+                              <span> ({feature.availabilityNote})</span>
                             )}
                           </span>
                         </li>
@@ -53,18 +62,15 @@ export default function Pricing({ locale }: { locale: string }) {
                   </ul>
                 </div>
                 <div className="mt-4">
-                  <a
+                  <Button
+                    variant={t.ctaStyle}
                     href={ctaHref(locale, t)}
+                    className="w-full"
                     aria-label={`${t.ctaLabel} — ${t.name}, ${t.priceLabel}`}
-                    className={
-                      t.ctaStyle === 'primary'
-                        ? 'block w-full text-center bg-slate-900 text-white text-sm font-medium px-4 py-2 rounded-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-500'
-                        : 'block w-full text-center border border-slate-300 text-slate-900 text-sm font-medium px-4 py-2 rounded-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-500'
-                    }
                   >
                     {t.ctaLabel}
-                  </a>
-                  {t.microcopy && <div className="mt-2 text-xs text-slate-600">{t.microcopy}</div>}
+                  </Button>
+                  {t.microcopy && <div className="mt-2 text-xs text-ink-900/70">{t.microcopy}</div>}
                 </div>
               </article>
             )

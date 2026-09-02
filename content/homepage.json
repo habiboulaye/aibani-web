@@ -1,8 +1,56 @@
 {
-  "_note": "Extraction mécanique du texte précédemment codé en dur dans Hero.tsx/Features.tsx/CTA.tsx — copie identique, pas une réécriture. Aligner ce contenu sur docs/source-material/homepage-content-v1-recommandee.md reste un travail de Phase 3 à part entière (voir aibani-brand-voice + marketing-critic).",
+  "_note": "hero/features/finalCta restent une extraction mécanique du texte précédemment codé en dur — pas encore alignés sur docs/source-material/homepage-content-v1-recommandee.md (reste un travail de Phase 3 à part entière). problem/solution (Batch 2), forWho/patientNetwork (Batch 3) et security (Batch 4) sont eux verbatim depuis ce document (§2/§3/§6/§4/§18) — security.hosting/security.compliance sont eux repris mot pour mot de docs/specs/08-security-compliance.md, l'autorité la plus précise pour cette section. Tous revus par marketing-critic + compliance-reviewer.",
   "hero": {
     "title": "Simplifier la gestion de soins",
     "subtitle": "AiBani aide les professionnels et établissements à mieux suivre leurs patients et optimiser les parcours."
+  },
+  "problem": {
+    "title": "Votre établissement mérite mieux que des agendas dispersés.",
+    "intro": "Entre les appels téléphoniques, les messages WhatsApp, les agendas papier, les fichiers Excel et les différents outils utilisés par chaque service, la gestion quotidienne peut rapidement devenir complexe.",
+    "conclusion": "AiBani rassemble l'essentiel au même endroit.",
+    "beforeLabel": "Avant AiBani",
+    "afterLabel": "Avec AiBani",
+    "before": [
+      "Rendez-vous difficiles à organiser",
+      "Informations dispersées",
+      "Temps perdu dans les tâches administratives",
+      "Difficulté à suivre l'activité",
+      "Gestion financière complexe",
+      "Communication difficile entre les équipes"
+    ],
+    "after": [
+      "Un agenda centralisé",
+      "Un dossier patient accessible selon vos droits",
+      "Une équipe organisée",
+      "Des opérations mieux structurées",
+      "Une gestion financière centralisée",
+      "Des indicateurs pour piloter votre activité"
+    ]
+  },
+  "solution": {
+    "title": "Un seul outil pour gérer votre activité de santé.",
+    "subtitle": "De la prise de rendez-vous au pilotage de votre établissement.",
+    "steps": [
+      { "role": "Patient", "action": "prend rendez-vous" },
+      { "role": "Réception", "action": "organise l'accueil" },
+      { "role": "Professionnel", "action": "consulte et suit le patient" },
+      { "role": "Administration", "action": "gère la facturation et les opérations" },
+      { "role": "Direction", "action": "pilote l'activité grâce aux données" }
+    ],
+    "note": "La prise de rendez-vous est gratuite. Les étapes suivantes s'activent avec les offres professionnelles.",
+    "text": "AiBani accompagne votre établissement tout au long du parcours, avec des outils adaptés à chaque membre de votre équipe.",
+    "ctaLabel": "Voir comment fonctionne AiBani",
+    "ctaHref": "/fonctionnalites"
+  },
+  "forWho": {
+    "title": "Quel que soit votre établissement, AiBani s'adapte à votre activité.",
+    "cardCtaLabels": {
+      "cabinet": "Solution pour cabinet →",
+      "clinique": "Solution pour clinique →",
+      "laboratoire": "Solution pour laboratoire →",
+      "pharmacie": "Solution pour pharmacie →",
+      "etablissement": "Parler à un expert →"
+    }
   },
   "features": {
     "title": "Fonctionnalités clés",
@@ -10,6 +58,37 @@
       { "id": "f1", "title": "Agenda & RDV", "description": "Gérez facilement les rendez-vous et disponibilités." },
       { "id": "f2", "title": "Dossiers patients", "description": "Accédez aux informations cliniques centralisées.", "availabilityNote": "selon l'offre (à partir de Cabinet)" }
     ]
+  },
+  "patientNetwork": {
+    "title": "Les rendez-vous sont gratuits. La gestion professionnelle, à votre rythme.",
+    "text": "Nous voulons d'abord vous aider à attirer et organiser vos patients. C'est pourquoi la présence de votre établissement et la prise de rendez-vous sur AiBani sont gratuites. Lorsque vous êtes prêt à aller plus loin, activez les fonctionnalités professionnelles dont votre établissement a besoin.",
+    "steps": [
+      { "title": "Créez votre établissement", "detail": "Gratuitement." },
+      { "title": "Recevez des rendez-vous", "detail": "Depuis le réseau AiBani." },
+      { "title": "Faites grandir votre activité", "detail": "Avec les outils de gestion professionnels." }
+    ],
+    "ctaLabel": "Découvrir l'offre gratuite AiBani Connect",
+    "ctaHref": "/tarifs#connect"
+  },
+  "security": {
+    "title": "Vos données méritent le plus haut niveau d'attention.",
+    "intro": "La confiance est au cœur d'une plateforme de santé. AiBani met en œuvre des mesures de sécurité et de contrôle des accès adaptées à la sensibilité des données traitées.",
+    "hostingLabel": "Hébergement — cloud ou sur vos serveurs",
+    "hosting": "Les données d'AiBani sont hébergées chez un prestataire certifié ISO/IEC 27001, avec authentification renforcée des accès. Une option d'hébergement sur site (serveurs locaux de l'établissement) est également proposée pour les structures qui le souhaitent.",
+    "complianceLabel": "Conformité APDP (Bénin)",
+    "compliance": "AiBani a déposé auprès de l'Autorité de Protection des Données Personnelles (APDP) du Bénin le dossier d'autorisation requis par le Code du numérique pour le traitement de données de santé, et dispose d'un accusé de réception officiel de ce dépôt.",
+    "commitmentsIntro": "Notre approche de la sécurité s'appuie sur :",
+    "commitments": [
+      "Contrôle des accès",
+      "Gestion des rôles et permissions",
+      "Protection des données",
+      "Sauvegardes",
+      "Traçabilité des opérations",
+      "Confidentialité",
+      "Amélioration continue de la sécurité"
+    ],
+    "ctaLabel": "En savoir plus sur la sécurité et la confidentialité",
+    "ctaHref": "/securite"
   },
   "finalCta": {
     "title": "Prêt à optimiser vos parcours patients ?",
