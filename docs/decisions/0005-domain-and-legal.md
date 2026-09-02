@@ -1,5 +1,5 @@
 Title: Domaine principal & formulation légale (Phase 0)
-Status: Proposed
+Status: Proposed — action items still open. Not a Phase 0-9 blocker: `docs/decisions/0004-phase0-acceptance.md`'s amendment (2026-08-30) defers the domain-proof requirement to Phase 10, where it's actually load-bearing (301 redirects, production cutover). Must be resolved before Phase 10 starts.
 
 Contexte:
 Le domaine cible `aibani.health` a été réservé (confirmé). La position légale/phrases relatives à APDP/agréments doivent être prudentes tant que les preuves documentaires ne sont pas jointes.

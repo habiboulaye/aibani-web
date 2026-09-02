@@ -1,12 +1,13 @@
 import React from 'react'
 import navigation from '../../../content/navigation.json'
 import type { NavigationContent } from '../../lib/types/content-types'
+import { localizeHref } from '../../lib/i18n/localizeHref'
 
 const nav = navigation as NavigationContent
 
 const columnKeys: (keyof NavigationContent['footer'])[] = ['solutions', 'product', 'company', 'trust', 'support']
 
-export default function Footer() {
+export default function Footer({ locale }: { locale: string }) {
   return (
     <footer className="w-full border-t bg-white mt-12">
       <div className="max-w-6xl mx-auto px-4 py-10">
@@ -19,7 +20,7 @@ export default function Footer() {
                 <ul className="mt-3 space-y-2">
                   {column.links.map(link => (
                     <li key={link.href}>
-                      <a href={link.href} className="text-sm text-slate-600 hover:text-slate-900">{link.label}</a>
+                      <a href={localizeHref(locale, link.href)} className="text-sm text-slate-600 hover:text-slate-900">{link.label}</a>
                     </li>
                   ))}
                 </ul>
