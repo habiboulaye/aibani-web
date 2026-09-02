@@ -327,6 +327,13 @@ export type TarifsTierCta = {
   followupNote?: string
 }
 
+export type ConsentContent = {
+  message: string
+  acceptLabel: string
+  refuseLabel: string
+  manageLabel: string
+}
+
 export type TarifsContent = {
   title: string
   seoDescription: string

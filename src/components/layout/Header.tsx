@@ -4,7 +4,7 @@ import navigation from '../../../content/navigation.json'
 import type { NavigationContent, NavDropdown } from '../../lib/types/content-types'
 import { localizeHref } from '../../lib/i18n/localizeHref'
 import { Link } from '../../i18n/navigation'
-import Button from '../ui/Button'
+import TrackedButton from '../analytics/TrackedButton'
 
 const nav = navigation as NavigationContent
 
@@ -48,9 +48,15 @@ export default function Header({ locale }: { locale: string }) {
               {link.label}
             </a>
           ))}
-          <Button variant="primary" size="sm" href={localizeHref(locale, nav.primaryCta.href)}>
+          <TrackedButton
+            variant="primary"
+            size="sm"
+            href={localizeHref(locale, nav.primaryCta.href)}
+            eventName="cta_create_establishment_click"
+            eventProps={{ position: 'header', label: nav.primaryCta.label }}
+          >
             {nav.primaryCta.label}
-          </Button>
+          </TrackedButton>
         </div>
       </div>
     </header>

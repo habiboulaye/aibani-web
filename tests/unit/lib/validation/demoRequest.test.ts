@@ -14,7 +14,8 @@ describe('normalizeDemoRequest', () => {
       mainNeed: '',
       email: '',
       phone: '',
-      website: ''
+      website: '',
+      utm: {}
     })
     expect(normalizeDemoRequest({ name: 123, establishment: [] })).toMatchObject({
       name: '',
@@ -27,6 +28,18 @@ describe('normalizeDemoRequest', () => {
     expect(result.name).toBe('Habiboulaye')
     expect(result.website).toBe('  http://spam.example  ')
   })
+
+  it('keeps string-valued utm entries and drops non-string values', () => {
+    const result = normalizeDemoRequest({
+      utm: { utm_source: 'linkedin', utm_medium: 42 }
+    })
+    expect(result.utm).toEqual({ utm_source: 'linkedin' })
+  })
+
+  it('coerces a missing/malformed utm into an empty object instead of throwing', () => {
+    expect(normalizeDemoRequest({ utm: 'not-an-object' }).utm).toEqual({})
+    expect(normalizeDemoRequest({}).utm).toEqual({})
+  })
 })
 
 describe('validateDemoRequest', () => {
@@ -37,7 +50,8 @@ describe('validateDemoRequest', () => {
     mainNeed: '',
     email: 'test@example.com',
     phone: '',
-    website: ''
+    website: '',
+    utm: {}
   }
 
   it('passes on a fully valid submission', () => {
@@ -46,7 +60,7 @@ describe('validateDemoRequest', () => {
 
   it('flags every required field missing on an empty submission', () => {
     const errors = validateDemoRequest(
-      { name: '', establishment: '', size: '', mainNeed: '', email: '', phone: '', website: '' },
+      { name: '', establishment: '', size: '', mainNeed: '', email: '', phone: '', website: '', utm: {} },
       messages
     )
     expect(errors).toEqual({

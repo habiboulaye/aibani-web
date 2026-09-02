@@ -18,7 +18,7 @@
     "submitLabel": "Envoyer ma demande",
     "submittingLabel": "Envoi en cours…",
     "successMessage": "Votre demande a bien été enregistrée.",
-    "privacyNote": "Ces informations sont utilisées uniquement pour répondre à votre demande de démonstration.",
+    "privacyNote": "Ces informations, ainsi que la source de votre visite (ex. campagne ou lien suivi), sont utilisées uniquement pour répondre à votre demande de démonstration.",
     "errors": {
       "nameRequired": "Merci d'indiquer votre nom.",
       "establishmentRequired": "Merci d'indiquer votre établissement.",
