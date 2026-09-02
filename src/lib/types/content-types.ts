@@ -233,3 +233,14 @@ export type Segment = {
   trustSignalIds?: string[]
   testimonialIds: string[]
 }
+
+export type SolutionsContent = {
+  hub: {
+    title: string
+    intro: string
+  }
+  painPointsLabel: string
+  featuresLabel: string
+  recommendedTierLabel: string
+  recommendedTierCtaLabel: string
+}

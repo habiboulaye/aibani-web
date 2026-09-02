@@ -9,9 +9,9 @@
     "Peu d'intégration numérique avec les prescripteurs du réseau",
     "Visibilité limitée auprès des patients recherchant une pharmacie"
   ],
-  "highlightedFeatureIds": ["network-presence", "pharmacy"],
+  "highlightedFeatureIds": ["network-presence"],
   "trustSignalIds": ["cnopb-authorization"],
-  "recommendedTierId": "clinic",
+  "recommendedTierId": "connect",
   "maturity": "network-only",
   "maturityNote": "280+ pharmacies sont déjà visibles et connectées gratuitement au réseau AiBani (présence, réception de demandes). Le module de gestion avancée (inventaire, dispensation) est en cours de construction — laissez vos coordonnées pour être informé du lancement.",
   "ctaLabel": "Rejoindre le réseau gratuitement",

@@ -13,6 +13,6 @@
   "highlightedFeatureIds": ["appointment-requests", "patient-records", "billing", "laboratory"],
   "recommendedTierId": "clinic",
   "maturity": "available",
-  "ctaLabel": "Solution pour laboratoire",
+  "ctaLabel": "Demander une démonstration",
   "testimonialIds": []
 }
