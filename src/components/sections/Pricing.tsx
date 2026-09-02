@@ -1,18 +1,11 @@
 import React from 'react'
 import pricing from '../../../content/pricing.json'
-import type { PricingContent, PricingTier } from '../../lib/types/content-types'
-import { localizeHref } from '../../lib/i18n/localizeHref'
+import type { PricingContent } from '../../lib/types/content-types'
+import { ctaHref } from '../../lib/pricing'
 import Button from '../ui/Button'
 import Badge from '../ui/Badge'
 
 const { title, subtitle, patientNote, tiers, features } = pricing as PricingContent
-
-// No self-serve signup/trial flow exists yet (pre-Phase-5): every tier CTA routes
-// to the one real conversion point spec'd for this phase (docs/specs/04-content-pages.md),
-// except Groupe which is explicitly a sales conversation.
-function ctaHref(locale: string, tier: PricingTier) {
-  return localizeHref(locale, tier.id === 'groupe' ? '/contact' : '/demo')
-}
 
 export default function Pricing({ locale }: { locale: string }) {
   return (
@@ -64,7 +57,7 @@ export default function Pricing({ locale }: { locale: string }) {
                 <div className="mt-4">
                   <Button
                     variant={t.ctaStyle}
-                    href={ctaHref(locale, t)}
+                    href={ctaHref(locale, t.id)}
                     className="w-full"
                     aria-label={`${t.ctaLabel} — ${t.name}, ${t.priceLabel}`}
                   >

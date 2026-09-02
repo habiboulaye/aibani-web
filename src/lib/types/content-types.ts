@@ -303,3 +303,32 @@ export type DemoContent = {
   hero: { title: string; subtitle: string }
   form: DemoFormContent
 }
+
+export type TarifsTierCta = {
+  // Absent when this tier's /tarifs-page CTA wording is identical to
+  // pricing.json's own tier.ctaLabel (see docs/specs/01-vision-positioning-
+  // personas.md's per-page CTA table) — falls back to tier.ctaLabel.
+  primaryLabel?: string
+  secondaryLabel?: string
+  // Shown for tiers whose CTA promises something ("essai", "créer mon
+  // établissement") that today actually routes to /demo, since no self-serve
+  // signup flow exists yet — sets honest expectations instead of a silent
+  // bait-and-switch.
+  followupNote?: string
+}
+
+export type TarifsContent = {
+  title: string
+  intro: string
+  socialProofIntro: string
+  comparisonTitle: string
+  calculatorLabel: string
+  calculatorPricePrefix: string
+  calculatorNote: string
+  switchToClinicNote: string
+  switchToClinicLinkLabel: string
+  modulesComingTitle: string
+  modulesComingBadgeLabel: string
+  // Keyed by PricingTier.id.
+  tierCtas: Record<string, TarifsTierCta>
+}
