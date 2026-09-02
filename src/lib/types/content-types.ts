@@ -244,3 +244,62 @@ export type SolutionsContent = {
   recommendedTierLabel: string
   recommendedTierCtaLabel: string
 }
+
+export type PatientStep = {
+  title: string
+  detail: string
+}
+
+export type PatientsContent = {
+  title: string
+  subtitle: string
+  howItWorksTitle: string
+  steps: PatientStep[]
+  downloadCtaLabel: string
+  appStoreLabel: string
+  appStoreUrl: string
+  playStoreLabel: string
+  playStoreUrl: string
+  findProfessionalCtaLabel: string
+  findProfessionalHref: string
+  proGatewayText: string
+  proGatewayCtaLabel: string
+}
+
+export type DemoFormFieldContent = {
+  label: string
+  hint?: string
+}
+
+export type DemoFormContent = {
+  fields: {
+    name: DemoFormFieldContent
+    establishment: DemoFormFieldContent
+    size: DemoFormFieldContent
+    mainNeed: DemoFormFieldContent
+    // Added beyond docs/specs/04-content-pages.md's field list (name,
+    // establishment, size, mainNeed only) — see docs/decisions/0010-*.md.
+    email: DemoFormFieldContent
+    phone: DemoFormFieldContent
+  }
+  honeypotLabel: string
+  submitLabel: string
+  submittingLabel: string
+  successMessage: string
+  privacyNote: string
+  errors: {
+    nameRequired: string
+    establishmentRequired: string
+    sizeRequired: string
+    emailRequired: string
+    emailInvalid: string
+    malformed: string
+    submitFailed: string
+    networkFailed: string
+  }
+}
+
+export type DemoContent = {
+  hero: { title: string; subtitle: string }
+  form: DemoFormContent
+}
