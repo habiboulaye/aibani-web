@@ -27,7 +27,7 @@ export default function FeatureComparisonTable({ tiers, features }: Pick<Pricing
                 <th
                   scope="colgroup"
                   colSpan={tiers.length + 1}
-                  className="text-left pt-4 pb-1 text-xs font-semibold uppercase tracking-wide text-ink-900/60"
+                  className="text-left pt-4 pb-1 text-xs font-semibold uppercase tracking-wide text-ink-900/70"
                 >
                   Inclus dès {originTier.name}
                 </th>
@@ -39,7 +39,7 @@ export default function FeatureComparisonTable({ tiers, features }: Pick<Pricing
                     <th scope="row" className="text-left py-2 pr-4 font-normal text-ink-900">
                       {feature.label}
                       {feature.availabilityNote && (
-                        <span className="text-ink-900/60"> ({feature.availabilityNote})</span>
+                        <span className="text-ink-900/70"> ({feature.availabilityNote})</span>
                       )}
                     </th>
                     {tiers.map(columnTier => (

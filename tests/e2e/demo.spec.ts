@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test'
+import AxeBuilder from '@axe-core/playwright'
 import demoContent from '../../content/demo.json'
 import type { DemoContent } from '../../src/lib/types/content-types'
 
@@ -45,5 +46,12 @@ test.describe('demo request form', () => {
       size: form.errors.sizeRequired,
       email: form.errors.emailRequired
     })
+  })
+
+  test('has no serious or critical accessibility violations', async ({ page }) => {
+    await page.goto('/fr/demo')
+    const results = await new AxeBuilder({ page }).analyze()
+    const blocking = results.violations.filter(v => v.impact === 'serious' || v.impact === 'critical')
+    expect(blocking, JSON.stringify(blocking, null, 2)).toEqual([])
   })
 })
