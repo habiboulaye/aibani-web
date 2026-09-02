@@ -10,6 +10,7 @@ import Footer from '../../components/layout/Footer'
 import UtmCapture from '../../components/analytics/UtmCapture'
 import PlausibleScript from '../../components/analytics/PlausibleScript'
 import ConsentBanner from '../../components/analytics/ConsentBanner'
+import AnalyticsObserver from '../../components/analytics/AnalyticsObserver'
 
 export function generateStaticParams() {
   return routing.locales.map(locale => ({ locale }))
@@ -53,6 +54,7 @@ export default function LocaleLayout({
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }} />
       <UtmCapture />
       <PlausibleScript />
+      <AnalyticsObserver />
       <Header locale={locale} />
       <main className="min-h-[60vh]">{children}</main>
       <Footer locale={locale} />

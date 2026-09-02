@@ -2,7 +2,7 @@ import React from 'react'
 import homepage from '../../../content/homepage.json'
 import type { HomepageContent } from '../../lib/types/content-types'
 import { localizeHref } from '../../lib/i18n/localizeHref'
-import TrackedLink from '../analytics/TrackedLink'
+import { trackedClickAttrs } from '../../lib/analytics'
 
 const { finalCta } = homepage as HomepageContent
 
@@ -17,14 +17,13 @@ export default function CTA({ locale }: { locale: string }) {
               not the ui/Button component: its shared focus ring (ember-700) is tuned
               for light backgrounds and drops to ~1.6:1 contrast here, below the 3:1
               non-text-UI minimum. A white ring is correct for this dark context instead. */}
-          <TrackedLink
+          <a
             href={localizeHref(locale, finalCta.ctaHref)}
             className="inline-block bg-white text-lagoon-900 px-6 py-3 rounded-control font-medium hover:bg-paper-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-            eventName="cta_request_demo_click"
-            eventProps={{ position: 'final_cta', label: finalCta.ctaLabel }}
+            {...trackedClickAttrs('cta_request_demo_click', { position: 'final_cta', label: finalCta.ctaLabel })}
           >
             {finalCta.ctaLabel}
-          </TrackedLink>
+          </a>
         </div>
       </div>
     </section>

@@ -53,3 +53,45 @@ test.describe('consent banner', () => {
     expect(blocking, JSON.stringify(blocking, null, 2)).toEqual([])
   })
 })
+
+// docs/decisions/0012-consolidate-analytics-tracking-for-performance.md:
+// every tracked element went from its own hydrated client component to
+// plain server-rendered markup with a data-track-* attribute, read by one
+// sitewide AnalyticsObserver. Nothing until now actually asserted an event
+// fires — only that navigation isn't blocked — so this is real regression
+// protection for that refactor specifically.
+test.describe('delegated tracking (AnalyticsObserver)', () => {
+  test.beforeEach(async ({ page }) => {
+    await page.addInitScript(() => {
+      window.localStorage.setItem('aibani:consent', 'accepted')
+      ;(window as unknown as { __plausibleCalls: unknown[] }).__plausibleCalls = []
+      window.plausible = (eventName, options) => {
+        ;(window as unknown as { __plausibleCalls: unknown[] }).__plausibleCalls.push({
+          eventName,
+          props: options?.props
+        })
+      }
+    })
+  })
+
+  test('a data-track-click element fires trackEvent with the right name on click', async ({ page }) => {
+    await page.goto('/fr')
+    await page.getByRole('link', { name: /Créer mon établissement/, exact: false }).first().click()
+
+    const calls = await page.evaluate(() => (window as unknown as { __plausibleCalls: unknown[] }).__plausibleCalls)
+    expect(calls).toContainEqual(
+      expect.objectContaining({ eventName: 'cta_create_establishment_click' })
+    )
+  })
+
+  test('a data-track-event sentinel fires trackEvent once scrolled into view', async ({ page }) => {
+    await page.goto('/fr/tarifs')
+    await page.locator('[data-track-event="pricing_tier_view"]').first().scrollIntoViewIfNeeded()
+
+    await expect
+      .poll(async () =>
+        page.evaluate(() => (window as unknown as { __plausibleCalls: unknown[] }).__plausibleCalls)
+      )
+      .toContainEqual(expect.objectContaining({ eventName: 'pricing_tier_view' }))
+  })
+})
