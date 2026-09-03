@@ -1,0 +1,7 @@
+# Next.js App Router (SSR/ISR/API routes/middleware) deploys zero-config via
+# Netlify's official Next.js Runtime once this repo is connected — see
+# docs/decisions/0013-preview-hosting-netlify.md. The only thing pinned here
+# is the Node version, to avoid any drift from what .github/workflows/ci.yml's
+# build job already validates against.
+[build.environment]
+  NODE_VERSION = "18"
